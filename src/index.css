@@ -1,0 +1,13 @@
+/* src/index.css */
+@import "tailwindcss";
+
+/* utilidades rápidas para los botones */
+.btn {
+  @apply inline-flex items-center justify-center px-5 py-3 rounded-xl font-medium transition;
+}
+.btn-primary {
+  @apply bg-[#2C344C] text-white hover:brightness-95 shadow;
+}
+.btn-outline {
+  @apply border border-[#2C344C] text-[#2C344C] hover:bg-[#2C344C] hover:text-white;
+}
