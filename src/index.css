@@ -1,13 +1,147 @@
-/* src/index.css */
+﻿@import url("https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400;500;600;700;800&family=Instrument+Sans:wght@400;500;600;700&display=swap");
 @import "tailwindcss";
 
-/* utilidades rápidas para los botones */
+body {
+  font-family: "Instrument Sans", sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Schibsted Grotesk", sans-serif;
+}
+
 .btn {
   @apply inline-flex items-center justify-center px-5 py-3 rounded-xl font-medium transition;
 }
+
 .btn-primary {
   @apply bg-[#2C344C] text-white hover:brightness-95 shadow;
 }
+
 .btn-outline {
   @apply border border-[#2C344C] text-[#2C344C] hover:bg-[#2C344C] hover:text-white;
+}
+
+.section-kicker {
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  font-size: 0.72rem;
+}
+
+.service-card-hover {
+  transition: transform 300ms ease;
+}
+
+.service-card-hover:hover {
+  transform: translateY(-6px);
+}
+
+.service-panel-animate {
+  animation: servicePanelIn 280ms ease-out;
+}
+
+@keyframes servicePanelIn {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.nav-link-hover {
+  opacity: 0.9;
+  transition: opacity 180ms ease, transform 180ms ease;
+}
+
+.nav-link-hover:hover {
+  opacity: 1;
+  transform: translateY(-1px);
+}
+
+.cta-hover {
+  transition: transform 220ms ease, box-shadow 220ms ease, filter 220ms ease;
+}
+
+.cta-hover:hover {
+  transform: translateY(-1px) scale(1.015);
+  box-shadow: 0 10px 24px rgba(12, 18, 36, 0.2);
+  filter: brightness(0.98);
+}
+
+.lang-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.36rem;
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  border-radius: 9999px;
+  padding: 0.34rem 0.6rem;
+  font-size: 0.72rem;
+  line-height: 1;
+  font-weight: 600;
+  color: #fff;
+  opacity: 0.92;
+  transition: transform 180ms ease, opacity 180ms ease, background-color 180ms ease;
+}
+
+.lang-pill:hover {
+  opacity: 1;
+  transform: translateY(-1px);
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.flag-dot {
+  width: 14px;
+  height: 14px;
+  border-radius: 9999px;
+  display: inline-block;
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.55);
+}
+
+.flag-mx {
+  background: linear-gradient(
+    90deg,
+    #006847 0%,
+    #006847 33.33%,
+    #ffffff 33.33%,
+    #ffffff 66.66%,
+    #ce1126 66.66%,
+    #ce1126 100%
+  );
+}
+
+.flag-us {
+  background:
+    linear-gradient(90deg, #3c3b6e 0 40%, transparent 40%),
+    repeating-linear-gradient(
+      180deg,
+      #b22234 0 2px,
+      #ffffff 2px 4px
+    );
+}
+
+.service-enter {
+  opacity: 0;
+  transform: translateX(22px);
+}
+
+.service-enter.service-enter-visible {
+  animation: serviceEnterIn 620ms cubic-bezier(0.23, 1, 0.32, 1) forwards;
+}
+
+@keyframes serviceEnterIn {
+  from {
+    opacity: 0;
+    transform: translateX(22px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
 }
