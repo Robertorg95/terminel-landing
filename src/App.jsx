@@ -2,7 +2,7 @@
 import Modal from "./components/modal.jsx";
 import ConsultationForm from "./components/ConsultationForm.jsx";
 import { FaFacebookF, FaInstagram } from "react-icons/fa";
-import { FaTiktok, FaXTwitter } from "react-icons/fa6";
+import { FaTiktok } from "react-icons/fa6";
 import llcImage from "./assets/services/service-llc.jpg";
 import investorImage from "./assets/services/service-investor.jpg";
 import familyImage from "./assets/services/service-family.jpg";
@@ -67,10 +67,19 @@ const SERVICES = [
       "Las visas de empleo permiten que trabajadores extranjeros calificados ingresen a Estados Unidos para desempeñar funciones profesionales, técnicas, artísticas o especializadas. Dependiendo de la categoría, el proceso puede requerir que un empleador estadounidense presente una petición ante USCIS para demostrar la necesidad del trabajador extranjero y su elegibilidad para la posición ofrecida.",
     ],
   },
+  {
+    title: "Traducciones Español – Inglés",
+    description:
+      "Servicio de traducción de documentos legales, corporativos y migratorios del español al inglés y viceversa.",
+    image: corporateImage,
+    details: [
+      "Servicio de traducción de documentos legales, corporativos y migratorios del español al inglés y viceversa, asegurando precisión terminológica y cumplimiento con los estándares requeridos en trámites oficiales ante autoridades en Estados Unidos.",
+    ],
+  },
 ];
 
 const INSTITUTIONAL_TEXT =
-  "Terminel Law Consulting es una firma legal especializada en derecho corporativo, derecho migratorio y derecho internacional privado. Ofrecemos asesoría estratégica a individuos, inversionistas y empresas que buscan desarrollar proyectos en México y Estados Unidos. Nuestro enfoque combina experiencia legal, cumplimiento normativo y colaboración con profesionales de distintas áreas para brindar soluciones integrales adaptadas a las necesidades de cada cliente.";
+  "Terminel Law Consulting impulsa a personas y empresas a expandirse entre México y Estados Unidos mediante soluciones legales en materia corporativa y migratoria, diseñadas para facilitar el crecimiento, reducir riesgos y garantizar un cumplimiento eficiente en cada etapa del proceso";
 
 const ESSENCE_PILLARS = [
   {
@@ -250,6 +259,11 @@ export default function App() {
 
             {/* Desktop */}
             <ul className="hidden md:flex items-center gap-6 text-sm">
+              <li>
+                <button onClick={() => navigateTo("/")} className="nav-link-hover">
+                  Inicio
+                </button>
+              </li>
               <li className="relative" ref={dropRef}>
                 <button
                   className="nav-link-hover flex items-center gap-1"
@@ -334,15 +348,6 @@ export default function App() {
                   <FaFacebookF className="w-4 h-4" />
                 </a>
                 <a
-                  href="https://twitter.com/tu-usuario"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label="X (Twitter)"
-                  className="p-2 rounded-full hover:bg-white/10 transition"
-                >
-                  <FaXTwitter className="w-4 h-4" />
-                </a>
-                <a
                   href="https://instagram.com/tu-usuario"
                   target="_blank"
                   rel="noopener noreferrer"
@@ -405,6 +410,12 @@ export default function App() {
                 Nosotros
               </a>
               <button
+                onClick={() => navigateTo("/")}
+                className="block px-4 py-2 text-left w-full"
+              >
+                Inicio
+              </button>
+              <button
                 onClick={() => navigateTo("/mision-vision-valores")}
                 className="block px-4 py-2 text-left w-full"
               >
@@ -443,15 +454,6 @@ export default function App() {
                   className="p-2 rounded-full border border-[#2C344C]/30"
                 >
                   <FaFacebookF className="w-4 h-4" />
-                </a>
-                <a
-                  href="https://twitter.com/tu-usuario"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label="X (Twitter)"
-                  className="p-2 rounded-full border border-[#2C344C]/30"
-                >
-                  <FaXTwitter className="w-4 h-4" />
                 </a>
                 <a
                   href="https://instagram.com/tu-usuario"
@@ -511,7 +513,7 @@ export default function App() {
                   className="rounded-2xl border border-white/20 bg-white/10 backdrop-blur-sm p-6 shadow-lg shadow-black/20 transition-transform duration-300 hover:scale-[1.06]"
                 >
                   <h3 className="font-[Bodoni Moda] text-2xl mb-3 text-white">{pillar.title}</h3>
-                  <p className="text-white/90 text-sm leading-relaxed">{pillar.text}</p>
+                  <p className="text-white/90 text-sm leading-relaxed text-justify">{pillar.text}</p>
                 </article>
               ))}
             </div>
@@ -585,7 +587,7 @@ export default function App() {
                 <h2 className="font-[Bodoni Moda] text-2xl md:text-4xl text-[#2C344C] mb-5">{selectedService.title}</h2>
                 <div className="space-y-5 text-slate-700 leading-relaxed text-base md:text-lg">
                   {selectedService.details.map((paragraph) => (
-                    <p key={paragraph}>{paragraph}</p>
+                    <p key={paragraph} className="text-justify">{paragraph}</p>
                   ))}
                 </div>
                 <div className="mt-8">
@@ -668,11 +670,11 @@ export default function App() {
               <div className="max-w-4xl">
                 <p className="text-xs uppercase tracking-[0.2em] text-[#9fb8ff] mb-4">Terminel Law Consulting</p>
                 <h1 className="font-[Bodoni Moda] text-5xl md:text-7xl lg:text-8xl leading-[0.9] text-white mb-6">
-                  Precisión
+                  Tu aliado legal entre
                   <br />
-                  en la Práctica.
+                  México y Estados Unidos.
                 </h1>
-                <p className="text-lg md:text-xl text-white/85 max-w-3xl leading-relaxed mb-8">{INSTITUTIONAL_TEXT}</p>
+                <p className="text-lg md:text-xl text-white/85 max-w-3xl leading-relaxed text-justify mb-8">{INSTITUTIONAL_TEXT}</p>
                 <div className="flex flex-wrap gap-4">
                   <button onClick={() => navigateTo("/contacto")} className="btn btn-primary">
                     Agenda una consulta
@@ -692,7 +694,7 @@ export default function App() {
           <section id="servicios" className="bg-white py-20">
             <div className="mx-auto max-w-7xl px-4 py-16">
               <p className="uppercase tracking-[0.2em] text-base md:text-lg text-[#3b82f6] mb-3">Nuestras Especialidades</p>
-              <h2 className="font-[Bodoni Moda] text-4xl md:text-6xl text-white mb-12">Áreas de práctica</h2>
+              <h2 className="font-[Bodoni Moda] text-4xl md:text-6xl text-slate-900 mb-12">Áreas de práctica</h2>
 
               <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
                 {SERVICES_WITH_IDS.map((service, i) => (
@@ -717,7 +719,7 @@ export default function App() {
                         {service.index} // Área de práctica
                       </span>
                       <h3 className="font-[Bodoni Moda] text-2xl md:text-3xl text-white mb-2">{service.title}</h3>
-                      <p className="text-sm text-white/80 leading-relaxed max-w-md">{service.description}</p>
+                      <p className="text-sm text-white/80 leading-relaxed max-w-md text-justify">{service.description}</p>
                       <button
                         onClick={(e) => {
                           e.stopPropagation();
@@ -741,7 +743,7 @@ export default function App() {
                   <div className="space-y-4">
                     <p className="uppercase tracking-[0.2em] text-xs text-[#2C344C]/70">Nuestra Firma</p>
                     <h2 className="font-[Bodoni Moda] text-4xl md:text-5xl text-slate-900">Sobre Nosotros</h2>
-                    <div className="space-y-5 text-slate-700 text-base md:text-lg leading-relaxed">
+                    <div className="space-y-5 text-slate-700 text-base md:text-lg leading-relaxed text-justify">
                       <p>
                         Terminel Law Consulting es una firma legal especializada en derecho corporativo, derecho
                         migratorio y derecho internacional privado. Asesoramos a personas, inversionistas y empresas
@@ -774,9 +776,8 @@ export default function App() {
                     <div className="rounded-2xl border border-slate-200 bg-white p-8 shadow-md shadow-slate-900/5">
                     <div className="space-y-6">
                       {[
-                        { number: "6", label: "Áreas de práctica especializadas" },
-                        { number: "2", label: "Jurisdicciones: México y EE.UU." },
-                        { number: "100%", label: "Enfoque en cumplimiento normativo" },
+                        { number: "+11", label: "Años de Experiencia" },
+                        { number: "+200", label: "visas aprobadas" },
                       ].map((stat) => (
                         <div key={stat.label} className="border-b border-slate-200 pb-6 last:border-0 last:pb-0">
                           <p className="font-[Bodoni Moda] text-4xl text-slate-900 mb-1">{stat.number}</p>
