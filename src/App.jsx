@@ -15,65 +15,129 @@ const SERVICES = [
   {
     title: "Formación de LLC & Corporations",
     description:
-      "Constituimos estructuras societarias en EE.UU. con enfoque legal, fiscal y operativo para iniciar con bases sólidas.",
+      "Constituimos LLC y corporaciones en Estados Unidos con estructura legal y operativa completa para iniciar de forma segura.",
     image: llcImage,
     details: [
       "Asesoramos en la constitución de LLC y corporaciones en Estados Unidos, estructuras legales comúnmente utilizadas por inversionistas y empresarios extranjeros para operar negocios en el país. Estas entidades permiten establecer una empresa legalmente registrada que cumpla con los requisitos estatales y federales para realizar actividades comerciales, contratar empleados y desarrollar operaciones en Estados Unidos.",
+      "Nos encargamos de todo el proceso para que tú te enfoques en hacer crecer tu negocio:",
+      "1. **Compañía constituida en el estado de tu elección**. Realizamos todo el proceso de registro legal en el estado que mejor se adapte a tus necesidades comerciales, asegurando cumplimiento normativo desde el inicio.",
+      "2. **Employer Identification Number (EIN)**. Gestionamos la obtención de este número fiscal ante el IRS, indispensable para efectos tributarios, contratación de empleados y apertura de cuentas bancarias.",
+      "3. **Acuerdo Operacional (Operating Agreement)**. Elaboramos este documento clave que define la estructura interna de la empresa, derechos y obligaciones de los miembros, y reglas de operación.",
+      "4. **Asistencia con el Statutory Agent (Registered Agent)**. Te apoyamos en la designación del agente registrado, quien será el responsable de recibir notificaciones legales y oficiales en nombre de la empresa.",
+      "5. **Asistencia con la apertura de cuenta bancaria**. Te guiamos en el proceso para abrir una cuenta empresarial en Estados Unidos, facilitando la correcta gestión financiera de tu negocio.",
+      "Con estos elementos esenciales, tu compañía contará con la estructura legal y operativa necesaria para comenzar actividades comerciales en Estados Unidos de manera segura, ordenada y conforme a la ley.",
     ],
   },
   {
     title: "Visas de inversionista",
     description:
-      "Diseñamos estrategias migratorias para inversionistas que buscan establecer o expandir negocios de forma segura.",
+      "Diseñamos y ejecutamos estrategias de visa E-2/EB-5 con enfoque legal, documental y de viabilidad empresarial.",
     image: investorImage,
     details: [
       "Las visas de inversionista, como la visa E-2 Treaty Investor, permiten que ciudadanos de países con tratados comerciales con Estados Unidos ingresen al país para invertir una cantidad sustancial de capital en una empresa estadounidense y dirigir su operación. El inversionista debe demostrar que el negocio es una empresa real y activa, que la inversión está en riesgo con el objetivo de generar ganancias y que el solicitante tendrá control o al menos el 50 % de propiedad de la empresa.",
       "En algunos casos, programas como EB-5 permiten obtener residencia permanente mediante una inversión significativa que genere al menos 10 empleos de tiempo completo para trabajadores en Estados Unidos.",
+      "En la práctica, este tipo de inversiones suelen iniciar desde aproximadamente **$100,000 dólares**, dependiendo del tipo de negocio y la solidez del proyecto presentado. Más allá del monto, es fundamental que la inversión cumpla con los criterios legales de ser real, activa y con propósito de generar utilidades.",
+      "Como parte de nuestro servicio, brindamos acompañamiento integral en el cumplimiento de todos los requisitos necesarios para la solicitud de la visa, incluyendo:",
+      "1. **Asesoría en la estructuración de la inversión**. Apoyamos en la definición de un modelo de negocio que cumpla con los lineamientos migratorios y fortalezca la viabilidad del caso.",
+      "2. **Preparación y revisión de documentación**. Asistimos en la integración de los documentos requeridos para sustentar la inversión y la operación del negocio.",
+      "3. **Aplicación de visa**. Gestionamos el proceso completo de solicitud de la visa de inversionista, asegurando que el expediente cumpla con todos los requisitos legales y migratorios.",
+      "4. **Representación por abogado en Estados Unidos**. El proceso se lleva a cabo con el acompañamiento de un abogado en Estados Unidos, y puede realizarse mediante cambio de estatus (para quienes ya se encuentran en el país) o a través de proceso consular (desde el país de origen), dependiendo de la situación del solicitante.",
+      "Con estos elementos, el solicitante podrá presentar un caso sólido que le permita obtener un estatus migratorio basado en su inversión y operar su negocio en Estados Unidos de manera legal.",
     ],
   },
   {
     title: "Inmigración Basada en Familia",
     description:
-      "Acompañamos procesos familiares con una ruta clara, documentación precisa y seguimiento legal integral.",
+      "Acompañamos peticiones familiares ante USCIS con estrategia, seguimiento continuo y preparación integral del caso.",
     image: familyImage,
     details: [
       "La inmigración basada en familia permite que ciudadanos estadounidenses y residentes permanentes legales soliciten la residencia permanente para ciertos familiares elegibles, incluyendo cónyuges, hijos, padres y hermanos. El proceso generalmente comienza con la presentación de una petición familiar ante USCIS para establecer la relación entre el patrocinador y el beneficiario.",
+      "Como parte de nuestro servicio, brindamos acompañamiento integral durante todo el proceso migratorio, asegurando el correcto cumplimiento de los requisitos y una preparación adecuada del caso:",
+      "1. **Evaluación del caso y elegibilidad**. Analizamos la situación del patrocinador y del beneficiario para determinar la viabilidad del proceso y la mejor estrategia a seguir.",
+      "2. **Preparación y presentación de la petición familiar**. Asistimos en la correcta integración y envío de la solicitud ante USCIS, incluyendo la recopilación de evidencia que demuestre la relación familiar.",
+      "3. **Seguimiento del proceso migratorio**. Damos acompañamiento continuo durante el trámite, atendiendo requerimientos adicionales y manteniendo informado al cliente en cada etapa.",
+      "4. **Ajuste de estatus o proceso consular**. Orientamos según corresponda: ya sea que el familiar se encuentre en Estados Unidos y pueda realizar un ajuste de estatus, o que deba completar el proceso a través de un consulado en su país de origen.",
+      "5. **Preparación para entrevista migratoria**. Brindamos asesoría previa a la entrevista para asegurar que el solicitante esté debidamente preparado y conozca el proceso.",
+      "Con este acompañamiento, facilitamos un proceso más claro, ordenado y sólido, aumentando las probabilidades de éxito en la obtención de la residencia permanente para tus familiares.",
     ],
   },
   {
     title: "Ciudadanía y Naturalización",
     description:
-      "Preparamos solicitudes de ciudadanía con revisión estratégica para reducir riesgos y fortalecer cada expediente.",
+      "Preparamos solicitudes de naturalización con estrategia documental y acompañamiento de principio a fin.",
     image: citizenshipImage,
     details: [
       "La naturalización es el proceso mediante el cual un residente permanente legal puede convertirse en ciudadano de Estados Unidos. De acuerdo con USCIS, los solicitantes generalmente deben cumplir con requisitos como haber mantenido residencia permanente durante un periodo determinado, demostrar buen carácter moral, conocimiento básico del inglés y aprobar un examen sobre historia y gobierno de Estados Unidos.",
+      "Como parte de nuestro servicio, brindamos acompañamiento integral durante todo el proceso, facilitando el cumplimiento de los requisitos y una correcta preparación del caso:",
+      "1. **Evaluación de elegibilidad**. Analizamos si el solicitante cumple con los requisitos necesarios para iniciar el proceso de naturalización, incluyendo tiempos de residencia y antecedentes.",
+      "2. **Preparación y presentación de la solicitud**. Asistimos en el llenado y envío de la solicitud correspondiente ante USCIS, asegurando que la información sea correcta y completa.",
+      "3. **Revisión de documentación**. Apoyamos en la recopilación y organización de los documentos necesarios para respaldar la solicitud.",
+      "4. **Preparación para examen y entrevista**. Orientamos al solicitante sobre el examen de inglés y civismo, así como sobre el proceso de entrevista, brindando herramientas para una adecuada preparación.",
+      "5. **Seguimiento del proceso**. Damos acompañamiento continuo, atendiendo cualquier requerimiento adicional y manteniendo informado al cliente en cada etapa.",
+      "Con este apoyo, el solicitante podrá avanzar en su proceso de naturalización de manera más segura, organizada y con mayores probabilidades de éxito para obtener la ciudadanía estadounidense.",
     ],
   },
   {
     title: "Consultoría Corporativa",
     description:
-      "Asesoramos a empresas en cumplimiento y toma de decisiones jurídicas para operar con certeza en mercados binacionales.",
+      "Asesoría corporativa integral para operar con cumplimiento normativo, orden interno y decisiones legales estratégicas.",
     image: corporateImage,
     details: [
       "Brindamos asesoría estratégica a empresas que operan o desean operar en Estados Unidos, incluyendo cumplimiento regulatorio, estructura corporativa, coordinación con asesores contables y financieros, y evaluación de requisitos legales para inversionistas extranjeros. Este servicio permite a los clientes desarrollar sus operaciones con mayor seguridad jurídica y cumplimiento normativo.",
+      "1. **Cumplimiento legal y regulatorio**. Supervisión y gestión integral del cumplimiento de leyes locales e internacionales aplicables, así como la implementación de programas internos de cumplimiento. Este enfoque integral permite no solo cumplir con la normativa externa, sino también fortalecer la cultura interna de cumplimiento, reduciendo riesgos de sanciones o contingencias legales. Como parte de nuestro servicio, apoyamos en la identificación de obligaciones aplicables, implementación de controles internos y seguimiento continuo para asegurar el cumplimiento normativo de la empresa:",
+      "• Obligaciones corporativas",
+      "• Licencias y permisos",
+      "• Regulaciones sectoriales",
+      "• Políticas internas y códigos de conducta",
+      "• Controles y mecanismos de supervisión",
+      "2. **Gobierno corporativo**. Diseño e implementación de políticas internas, manuales y mejores prácticas para la toma de decisiones, roles de socios, juntas directivas y control interno. Brindamos asesoría en la estructuración de reglas claras de operación, fortaleciendo la organización interna y la toma de decisiones estratégicas dentro de la empresa.",
+      "3. **Contratos y relaciones comerciales**. Redacción, revisión y negociación de contratos clave. Asistimos en la elaboración y análisis de contratos para proteger los intereses del cliente, reducir riesgos legales y asegurar relaciones comerciales sólidas:",
+      "• Contratos con proveedores",
+      "• Acuerdos con clientes",
+      "• Joint ventures",
+      "• Acuerdos de confidencialidad (NDA)",
+      "4. **Planeación estratégica legal**. Acompañamiento en la toma de decisiones empresariales considerando implicaciones legales, fiscales y operativas para asegurar crecimiento sostenible. Apoyamos en la evaluación de escenarios y riesgos, permitiendo tomar decisiones informadas alineadas con los objetivos del negocio.",
+      "5. **Fusiones, adquisiciones y reestructuración**. Asistencia en procesos de compra/venta de empresas, reorganización corporativa, due diligence y negociación de términos. Brindamos soporte en cada etapa del proceso, desde el análisis inicial hasta la ejecución, asegurando una transición ordenada y conforme a la normativa aplicable.",
+      "6. **Coordinación legal**. Actuamos como punto central de gestión legal para la empresa, coordinando distintos procesos, asesores y áreas involucradas. Este servicio permite al cliente contar con una supervisión integral de sus asuntos legales, asegurando consistencia, control y alineación con la estrategia del negocio.",
     ],
   },
   {
     title: "Visas de Empleo",
     description:
-      "Gestionamos visas laborales para talento y organizaciones con enfoque en continuidad, tiempos y cumplimiento normativo.",
+      "Gestionamos visas de empleo para perfiles calificados y empleadores patrocinadores con enfoque técnico y migratorio.",
     image: employmentImage,
     details: [
       "Las visas de empleo permiten que trabajadores extranjeros calificados ingresen a Estados Unidos para desempeñar funciones profesionales, técnicas, artísticas o especializadas. Dependiendo de la categoría, el proceso puede requerir que un empleador estadounidense presente una petición ante USCIS para demostrar la necesidad del trabajador extranjero y su elegibilidad para la posición ofrecida.",
+      "**Principales categorías de visas de empleo**:",
+      "• **Visa L-1 (Transferencia intraempresa)**. Para ejecutivos, gerentes o empleados con conocimiento especializado que son transferidos desde una empresa extranjera a una filial o subsidiaria en Estados Unidos.",
+      "• **Visa O-1 (Habilidades extraordinarias)**. Para personas con habilidades sobresalientes en áreas como negocios, ciencias, artes, educación o deportes, que puedan demostrar reconocimiento a nivel nacional o internacional.",
+      "• **Visa P (Atletas, artistas y entretenimiento)**. Dirigida a atletas, artistas o grupos de entretenimiento que participan en eventos, competencias o presentaciones específicas en Estados Unidos.",
+      "• **Visa TN (Profesionales bajo tratado - México/Canadá)**. Disponible para ciudadanos de México y Canadá bajo el tratado comercial, para ciertas profesiones específicas con oferta laboral en Estados Unidos.",
+      "Como parte de nuestro servicio, brindamos acompañamiento integral durante todo el proceso migratorio, asegurando el cumplimiento de los requisitos y una adecuada preparación del caso:",
+      "1. **Evaluación del perfil y elegibilidad**. Analizamos la experiencia, formación y situación del solicitante, así como las necesidades del empleador, para determinar la categoría de visa más adecuada.",
+      "2. **Asesoría al empleador patrocinador**. Orientamos al empleador en el cumplimiento de sus obligaciones legales, incluyendo la correcta estructuración de la oferta laboral y requisitos ante autoridades migratorias.",
+      "3. **Preparación y presentación de la petición**. Asistimos en la integración y envío de la solicitud ante USCIS, incluyendo la recopilación de evidencia que respalde la elegibilidad del trabajador y la posición ofrecida.",
+      "4. **Preparación de documentación del solicitante**. Apoyamos en la organización de documentos personales, académicos y profesionales necesarios para sustentar la solicitud.",
+      "5. **Proceso de solicitud de visa**. Brindamos acompañamiento en la etapa final del trámite, ya sea mediante **proceso consular** desde el país de origen o conforme a los procedimientos aplicables según el caso.",
+      "6. **Seguimiento del proceso**. Damos acompañamiento continuo, atendiendo requerimientos adicionales y manteniendo informado al cliente en cada etapa.",
+      "Con este apoyo, tanto el empleador como el trabajador cuentan con una guía clara y estructurada que facilita la obtención de la visa de empleo y el inicio de actividades laborales en Estados Unidos de manera legal.",
     ],
   },
   {
     title: "Traducciones Español – Inglés",
     description:
-      "Servicio de traducción de documentos legales, corporativos y migratorios del español al inglés y viceversa.",
+      "Traducción especializada de documentos legales, corporativos y migratorios con precisión terminológica y validez formal.",
     image: corporateImage,
     details: [
       "Servicio de traducción de documentos legales, corporativos y migratorios del español al inglés y viceversa, asegurando precisión terminológica y cumplimiento con los estándares requeridos en trámites oficiales ante autoridades en Estados Unidos.",
+      "Como parte de nuestro servicio, brindamos apoyo integral para garantizar que la documentación cumpla con los requisitos formales y legales necesarios:",
+      "1. **Revisión y análisis del documento**. Evaluamos el tipo de documento y su propósito para asegurar que la traducción cumpla con los estándares requeridos según el trámite.",
+      "2. **Traducción especializada**. Realizamos traducciones con enfoque legal y técnico, cuidando la terminología y el contexto para mantener la validez del contenido.",
+      "3. **Formato y adaptación**. Ajustamos el documento traducido para que mantenga coherencia con el formato original y sea adecuado para su presentación oficial.",
+      "4. **Certificación de traducción (cuando aplica)**. Proporcionamos traducciones certificadas conforme a los requisitos de autoridades migratorias o instituciones en Estados Unidos.",
+      "5. **Control de calidad y revisión final**. Realizamos una revisión detallada para asegurar exactitud, consistencia y cumplimiento con estándares formales.",
+      "6. **Acompañamiento en el uso del documento**. Orientamos sobre cómo presentar correctamente las traducciones dentro de procesos legales o migratorios.",
+      "Con este servicio, el cliente cuenta con documentos traducidos de manera precisa y confiable, listos para ser utilizados en trámites oficiales en Estados Unidos.",
     ],
   },
 ];
@@ -137,6 +201,95 @@ const SERVICES_WITH_IDS = SERVICES.map((s, i) => ({
   id: slug(s.title),
   index: String(i + 1).padStart(2, "0"),
 }));
+
+const numberPrefixPattern = /^(\d+)\.\s+(.+)$/;
+const bulletPrefixPattern = /^[•-]\s+(.+)$/;
+const boldLeadPattern = /^\*\*(.+?)\*\*(?:\.?\s*(.*))?$/;
+
+const groupServiceDetails = (details = []) => {
+  const blocks = [];
+  let currentList = null;
+
+  details.forEach((line, idx) => {
+    const trimmed = line.trim();
+    const numberedMatch = trimmed.match(numberPrefixPattern);
+    const bulletMatch = trimmed.match(bulletPrefixPattern);
+
+    if (numberedMatch) {
+      const content = numberedMatch[2].trim();
+      const boldLeadMatch = content.match(boldLeadPattern);
+      const item = {
+        order: Number(numberedMatch[1]),
+        title: boldLeadMatch ? boldLeadMatch[1] : null,
+        description: boldLeadMatch ? (boldLeadMatch[2] ?? "") : content,
+      };
+
+      if (!currentList || currentList.listType !== "ordered") {
+        currentList = {
+          type: "list",
+          listType: "ordered",
+          key: `list-${idx}`,
+          items: [item],
+        };
+        blocks.push(currentList);
+      } else {
+        currentList.items.push(item);
+      }
+      return;
+    }
+
+    if (bulletMatch) {
+      const content = bulletMatch[1].trim();
+      const boldLeadMatch = content.match(boldLeadPattern);
+      const item = {
+        title: boldLeadMatch ? boldLeadMatch[1] : null,
+        description: boldLeadMatch ? (boldLeadMatch[2] ?? "") : content,
+      };
+
+      const lastBlock = blocks[blocks.length - 1];
+      if (lastBlock?.type === "list" && lastBlock.listType === "ordered" && lastBlock.items.length > 0) {
+        const lastOrderedItem = lastBlock.items[lastBlock.items.length - 1];
+        if (!lastOrderedItem.bullets) {
+          lastOrderedItem.bullets = [];
+        }
+        lastOrderedItem.bullets.push(item);
+        return;
+      }
+
+      if (!currentList || currentList.listType !== "unordered") {
+        currentList = {
+          type: "list",
+          listType: "unordered",
+          key: `list-${idx}`,
+          items: [item],
+        };
+        blocks.push(currentList);
+      } else {
+        currentList.items.push(item);
+      }
+      return;
+    }
+
+    currentList = null;
+    blocks.push({
+      type: trimmed.endsWith(":") ? "heading" : "paragraph",
+      key: `text-${idx}`,
+      text: trimmed,
+    });
+  });
+
+  return blocks;
+};
+
+const renderInlineFormatting = (text) => {
+  const parts = text.split(/(\*\*[^*]+\*\*)/g).filter(Boolean);
+  return parts.map((part, idx) => {
+    if (part.startsWith("**") && part.endsWith("**")) {
+      return <strong key={`b-${idx}`}>{part.slice(2, -2)}</strong>;
+    }
+    return <span key={`t-${idx}`}>{part}</span>;
+  });
+};
 
 export default function App() {
   const [openMenu, setOpenMenu] = useState(false);
@@ -237,6 +390,10 @@ export default function App() {
   const requestedService = new URLSearchParams(route.search).get("servicio");
   const selectedService =
     SERVICES_WITH_IDS.find((service) => service.id === requestedService) ?? SERVICES_WITH_IDS[0];
+  const selectedServiceBlocks = useMemo(
+    () => groupServiceDetails(selectedService.details),
+    [selectedService.details]
+  );
   const selectedServiceImagePosition = selectedService.id === "visas-de-empleo" ? "center 29%" : "center center";
 
   return (
@@ -586,9 +743,83 @@ export default function App() {
                 </div>
                 <h2 className="font-[Bodoni Moda] text-2xl md:text-4xl text-[#2C344C] mb-5">{selectedService.title}</h2>
                 <div className="space-y-5 text-slate-700 leading-relaxed text-base md:text-lg">
-                  {selectedService.details.map((paragraph) => (
-                    <p key={paragraph} className="text-justify">{paragraph}</p>
-                  ))}
+                  {selectedServiceBlocks.map((block) => {
+                    if (block.type === "list") {
+                      if (block.listType === "unordered") {
+                        return (
+                          <ul key={block.key} className="space-y-2 list-disc pl-6 marker:text-[#2C344C] marker:font-semibold">
+                            {block.items.map((item, itemIdx) => (
+                              <li key={`${block.key}-u-${itemIdx}`} className="text-justify">
+                                {item.title ? (
+                                  <>
+                                    <span className="font-semibold text-[#1f2a44]">{renderInlineFormatting(item.title)}</span>
+                                    {item.description ? <span>{` ${item.description}`}</span> : null}
+                                  </>
+                                ) : (
+                                  renderInlineFormatting(item.description)
+                                )}
+                              </li>
+                            ))}
+                          </ul>
+                        );
+                      }
+
+                      return (
+                        <ol
+                          key={block.key}
+                          start={block.items[0]?.order ?? 1}
+                          className="space-y-5 list-decimal pl-8 marker:text-[#2C344C] marker:font-semibold"
+                        >
+                          {block.items.map((item, itemIdx) => (
+                            <li key={`${block.key}-${item.order}-${itemIdx}`} className="text-justify">
+                              {item.title ? (
+                                <div className="space-y-1">
+                                  <div className="font-semibold text-[#1f2a44]">{renderInlineFormatting(item.title)}</div>
+                                  {item.description ? (
+                                    <p className="text-justify">{renderInlineFormatting(item.description)}</p>
+                                  ) : null}
+                                  {item.bullets?.length ? (
+                                    <ul className="mt-2 space-y-1.5 list-disc pl-6 marker:text-[#2C344C] marker:font-semibold">
+                                      {item.bullets.map((bullet, bulletIdx) => (
+                                        <li key={`${block.key}-b-${itemIdx}-${bulletIdx}`} className="text-justify">
+                                          {bullet.title ? (
+                                            <>
+                                              <span className="font-semibold text-[#1f2a44]">
+                                                {renderInlineFormatting(bullet.title)}
+                                              </span>
+                                              {bullet.description ? <span>{` ${bullet.description}`}</span> : null}
+                                            </>
+                                          ) : (
+                                            renderInlineFormatting(bullet.description)
+                                          )}
+                                        </li>
+                                      ))}
+                                    </ul>
+                                  ) : null}
+                                </div>
+                              ) : (
+                                <p className="text-justify">{renderInlineFormatting(item.description)}</p>
+                              )}
+                            </li>
+                          ))}
+                        </ol>
+                      );
+                    }
+
+                    if (block.type === "heading") {
+                      return (
+                        <h3 key={block.key} className="font-semibold text-[#2C344C] text-base md:text-lg">
+                          {renderInlineFormatting(block.text)}
+                        </h3>
+                      );
+                    }
+
+                    return (
+                      <p key={block.key} className="text-justify">
+                        {renderInlineFormatting(block.text)}
+                      </p>
+                    );
+                  })}
                 </div>
                 <div className="mt-8">
                   <button onClick={() => navigateTo("/contacto")} className="btn btn-primary">
@@ -672,7 +903,7 @@ export default function App() {
                 <h1 className="font-[Bodoni Moda] text-5xl md:text-7xl lg:text-8xl leading-[0.9] text-white mb-6">
                   Tu aliado legal entre
                   <br />
-                  México y Estados Unidos.
+                  México y Estados Unidos
                 </h1>
                 <p className="text-lg md:text-xl text-white/85 max-w-3xl leading-relaxed text-justify mb-8">{INSTITUTIONAL_TEXT}</p>
                 <div className="flex flex-wrap gap-4">
