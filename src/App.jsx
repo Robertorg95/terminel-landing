@@ -9,6 +9,7 @@ import familyImage from "./assets/services/service-family.jpg";
 import citizenshipImage from "./assets/services/service-citizenship.jpg";
 import corporateImage from "./assets/services/service-corporate.jpg";
 import employmentImage from "./assets/services/service-employment.jpg";
+import translationsImage from "./assets/services/service-translations.jpg";
 
 /* ====== DATA (categorías de servicios) ====== */
 const SERVICES = [
@@ -127,7 +128,7 @@ const SERVICES = [
     title: "Traducciones Español – Inglés",
     description:
       "Traducción especializada de documentos legales, corporativos y migratorios con precisión terminológica y validez formal.",
-    image: corporateImage,
+    image: translationsImage,
     details: [
       "Servicio de traducción de documentos legales, corporativos y migratorios del español al inglés y viceversa, asegurando precisión terminológica y cumplimiento con los estándares requeridos en trámites oficiales ante autoridades en Estados Unidos.",
       "Como parte de nuestro servicio, brindamos apoyo integral para garantizar que la documentación cumpla con los requisitos formales y legales necesarios:",
@@ -187,6 +188,71 @@ const ESSENCE_VALUES = [
   },
 ];
 
+const ESSENCE_CONTENT = {
+  es: {
+    eyebrow: "Nuestra Firma",
+    title: "Misión, Visión y Valores",
+    subtitle:
+      "Estructuramos nuestro trabajo bajo principios legales sólidos para ofrecer un servicio transnacional confiable, estratégico y orientado a resultados para cada cliente.",
+    backHome: "Volver al inicio",
+    valuesTitle: "Nuestros Valores",
+    valuesSubtitle:
+      "Principios que guían cada decisión jurídica y cada relación profesional en Terminel Law Consulting.",
+    pillars: ESSENCE_PILLARS,
+    values: ESSENCE_VALUES,
+  },
+  en: {
+    eyebrow: "Our Firm",
+    title: "Mission, Vision and Values",
+    subtitle:
+      "We structure our work under solid legal principles to deliver a reliable, strategic, and results-oriented transnational service for every client.",
+    backHome: "Back to home",
+    valuesTitle: "Our Values",
+    valuesSubtitle:
+      "Principles that guide every legal decision and every professional relationship at Terminel Law Consulting.",
+    pillars: [
+      {
+        title: "Mission",
+        text: "To provide specialized legal counsel in corporate law, immigration law, and private international law, offering strategic, ethical, and efficient solutions that allow our clients to develop their personal and business projects with legal certainty in Mexico and the United States. At Terminel Law Consulting, we work closely with each client, combining legal knowledge, regulatory compliance, and coordination with allied professionals to facilitate the achievement of their objectives.",
+      },
+      {
+        title: "Vision",
+        text: "To establish ourselves as a benchmark firm in transnational legal services between Mexico and the United States, recognized for excellence, client trust, and the ability to integrate legal, business, and immigration solutions in a strategic, efficient, and innovative way.",
+      },
+      {
+        title: "Purpose",
+        text: "To support families, entrepreneurs, and companies in materializing their international projects and aspirations, providing honest, reliable, and effective legal guidance that enables them to grow, invest, settle, and operate with legal certainty across jurisdictions.",
+      },
+    ],
+    values: [
+      {
+        title: "Honesty",
+        text: "We act with transparency and responsibility in every legal process, always providing clear and realistic information to our clients.",
+      },
+      {
+        title: "Excellence",
+        text: "We are committed to delivering high-quality legal services based on constant preparation, strategic analysis, and attention to detail.",
+      },
+      {
+        title: "Integrity",
+        text: "We practice law with ethics, respect for the law, and professional responsibility.",
+      },
+      {
+        title: "Client Commitment",
+        text: "We work collaboratively with each client, understanding their goals and supporting them throughout the legal process.",
+      },
+      {
+        title: "Professionalism",
+        text: "Our firm maintains high standards in the management of each case, prioritizing efficiency, compliance, and legal precision.",
+      },
+      {
+        title: "Strategic Collaboration",
+        text: "Through alliances with professionals in Mexico and the United States — accountants, financial advisors, real estate agents, and translators — we offer comprehensive solutions tailored to client needs.",
+      },
+    ],
+  },
+};
+
 /* util: id amigable para anclas */
 const slug = (s) =>
   s
@@ -201,6 +267,262 @@ const SERVICES_WITH_IDS = SERVICES.map((s, i) => ({
   id: slug(s.title),
   index: String(i + 1).padStart(2, "0"),
 }));
+
+const UI_TEXT = {
+  es: {
+    nav: {
+      home: "Inicio",
+      services: "Servicios",
+      about: "Nosotros",
+      essence: "Misión y Valores",
+      contact: "Contacto",
+      cta: "Agenda una consulta",
+      openMenu: "Abrir menú",
+      logoAria: "Ir al inicio",
+      langEsAria: "Cambiar a Español",
+      langEnAria: "Cambiar a Inglés",
+    },
+    home: {
+      heroTitleLine1: "Tu aliado legal entre",
+      heroTitleLine2: "México y Estados Unidos",
+      institutionalText:
+        "Terminel Law Consulting impulsa a personas y empresas a expandirse entre México y Estados Unidos mediante soluciones legales en materia corporativa y migratoria, diseñadas para facilitar el crecimiento, reducir riesgos y garantizar un cumplimiento eficiente en cada etapa del proceso.",
+      heroSecondaryCta: "Nuestros servicios",
+      specialtiesEyebrow: "Nuestras Especialidades",
+      specialtiesTitle: "Áreas de práctica",
+      areaLabel: "Área de práctica",
+      cardCta: "Solicitar más información",
+      aboutEyebrow: "Nuestra Firma",
+      aboutTitle: "Sobre Nosotros",
+      aboutParagraphs: [
+        "Terminel Law Consulting es una firma legal especializada en derecho corporativo, derecho migratorio y derecho internacional privado. Asesoramos a personas, inversionistas y empresas que desarrollan proyectos entre México y Estados Unidos, ofreciendo soluciones legales estratégicas enfocadas en cumplimiento normativo, estructuración empresarial y movilidad internacional.",
+        "La firma fue fundada por el Mtro. Iván Terminel, abogado mexicano con experiencia en el ámbito legal transnacional y en la preparación de procesos migratorios y corporativos para clientes que buscan establecerse, invertir o expandir sus actividades en ambos países. Su práctica se caracteriza por un enfoque estratégico, comunicación clara y atención cercana al cliente.",
+        "En colaboración con aliados profesionales en áreas legales, contables, financieras e inmobiliarias, Terminel Law Consulting ofrece un servicio integral diseñado para brindar seguridad jurídica y facilitar el cumplimiento de los objetivos personales y empresariales de sus clientes.",
+      ],
+      stats: [
+        { number: "+11", label: "Años de Experiencia" },
+        { number: "+200", label: "visas aprobadas" },
+      ],
+    },
+    servicesPage: {
+      eyebrow: "Terminel Law Consulting",
+      title: "Nuestros Servicios",
+      subtitle:
+        "Selecciona un servicio para conocer su alcance legal y cómo puede ayudarte en tus proyectos entre México y Estados Unidos.",
+      cta: "Solicitar consulta sobre este servicio",
+    },
+    contactPage: {
+      eyebrow: "Atención Legal",
+      title: "Solicitud y Contacto",
+      subtitle:
+        "Completa el formulario para iniciar tu consulta con nuestro equipo. Te responderemos con una ruta legal clara y estratégica según tu objetivo.",
+      formTitle: "Formulario de Contacto",
+    },
+    footer: {
+      privacy: "Privacidad",
+      terms: "Términos",
+      privacyTitle: "Política de Privacidad",
+      termsTitle: "Términos y Condiciones de Uso",
+      privacyText: `En Terminel Law Consulting valoramos y protegemos la privacidad de nuestros usuarios. Toda la información personal que se recopile a través de este sitio web será utilizada exclusivamente para fines de contacto, prestación de servicios legales y comunicación directa con el cliente. No compartiremos ni venderemos su información a terceros sin su consentimiento expreso, salvo cuando lo exija la ley.
+Al utilizar este sitio, usted acepta nuestra política de privacidad y el tratamiento de datos de acuerdo con la legislación aplicable en materia de protección de datos.`,
+      termsText: `El uso de este sitio web implica la aceptación plena y sin reservas de los presentes términos y condiciones. Toda la información contenida en este sitio es de carácter general y no constituye asesoría legal específica. Para recibir asesoría personalizada debe contactar directamente con Terminel Law Consulting.
+Queda prohibida la reproducción, distribución o modificación de los contenidos del sitio sin la autorización expresa de Terminel Law Consulting. El usuario se compromete a utilizar el sitio conforme a la ley, la moral y el orden público.
+Terminel Law Consulting no se hace responsable por el mal uso del sitio ni por decisiones tomadas con base en la información publicada. Nos reservamos el derecho de modificar estos términos en cualquier momento sin previo aviso.`,
+    },
+  },
+  en: {
+    nav: {
+      home: "Home",
+      services: "Services",
+      about: "About",
+      essence: "Mission & Values",
+      contact: "Contact",
+      cta: "Schedule a consultation",
+      openMenu: "Open menu",
+      logoAria: "Go to home",
+      langEsAria: "Switch to Spanish",
+      langEnAria: "Switch to English",
+    },
+    home: {
+      heroTitleLine1: "Your legal ally between",
+      heroTitleLine2: "Mexico and the United States",
+      institutionalText:
+        "Terminel Law Consulting helps individuals and companies expand between Mexico and the United States through corporate and immigration legal solutions designed to support growth, reduce risk, and ensure efficient compliance at every stage.",
+      heroSecondaryCta: "Our services",
+      specialtiesEyebrow: "Our Specialties",
+      specialtiesTitle: "Practice Areas",
+      areaLabel: "Practice area",
+      cardCta: "Request more information",
+      aboutEyebrow: "Our Firm",
+      aboutTitle: "About Us",
+      aboutParagraphs: [
+        "Terminel Law Consulting is a law firm focused on corporate law, immigration law, and private international law. We advise individuals, investors, and businesses developing projects between Mexico and the United States, delivering strategic legal solutions focused on compliance, corporate structuring, and international mobility.",
+        "The firm was founded by Mtro. Iván Terminel, a Mexican attorney with experience in transnational legal matters and in preparing immigration and corporate processes for clients seeking to establish, invest, or expand their activities in both countries. His practice is defined by strategic guidance, clear communication, and close client attention.",
+        "In collaboration with allied professionals in legal, accounting, financial, and real estate areas, Terminel Law Consulting provides an integrated service designed to deliver legal certainty and facilitate the achievement of each client's personal and business goals.",
+      ],
+      stats: [
+        { number: "+11", label: "Years of Experience" },
+        { number: "+200", label: "approved visas" },
+      ],
+    },
+    servicesPage: {
+      eyebrow: "Terminel Law Consulting",
+      title: "Our Services",
+      subtitle:
+        "Select a service to understand its legal scope and how it can support your projects between Mexico and the United States.",
+      cta: "Request a consultation for this service",
+    },
+    contactPage: {
+      eyebrow: "Legal Support",
+      title: "Request and Contact",
+      subtitle:
+        "Complete the form to start your consultation with our team. We will respond with a clear and strategic legal path based on your goals.",
+      formTitle: "Contact Form",
+    },
+    footer: {
+      privacy: "Privacy",
+      terms: "Terms",
+      privacyTitle: "Privacy Policy",
+      termsTitle: "Terms and Conditions of Use",
+      privacyText: `At Terminel Law Consulting, we value and protect the privacy of our users. Any personal information collected through this website will be used exclusively for contact purposes, legal service delivery, and direct communication with the client. We do not share or sell your information to third parties without your express consent, except when required by law.
+By using this website, you accept our privacy policy and the processing of data in accordance with applicable data protection laws.`,
+      termsText: `Use of this website implies full and unreserved acceptance of these terms and conditions. All information contained on this site is general in nature and does not constitute specific legal advice. For personalized legal advice, you must contact Terminel Law Consulting directly.
+Reproduction, distribution, or modification of the site's content is prohibited without the express authorization of Terminel Law Consulting. Users agree to use this website in accordance with the law, morality, and public order.
+Terminel Law Consulting is not responsible for misuse of the site or decisions made based on published information. We reserve the right to modify these terms at any time without prior notice.`,
+    },
+  },
+};
+
+const SERVICE_LOCALIZED = {
+  "formacion-de-llc-corporations": {
+    en: {
+      title: "LLC & Corporations Formation",
+      description: "We set up LLCs and corporations in the U.S. with a complete legal and operational structure for a secure start.",
+      details: [
+        "We advise on the incorporation of LLCs and corporations in the United States, legal structures commonly used by foreign investors and business owners to operate in the U.S. These entities allow you to establish a legally registered company that meets state and federal requirements for commercial operations, hiring, and growth.",
+        "We handle the full process so you can focus on growing your business:",
+        "1. **Company incorporated in the state of your choice**. We complete the legal registration process in the state that best fits your business goals, ensuring compliance from day one.",
+        "2. **Employer Identification Number (EIN)**. We obtain your federal tax ID with the IRS, essential for tax reporting, hiring employees, and opening business bank accounts.",
+        "3. **Operating Agreement**. We draft this key document defining internal structure, member rights and obligations, and operational rules.",
+        "4. **Statutory Agent (Registered Agent) assistance**. We support the designation of a registered agent to receive legal and official notices on behalf of your company.",
+        "5. **Business bank account opening support**. We guide you through opening a U.S. business bank account to enable proper financial operations.",
+        "With these core elements, your company will have the legal and operational foundation needed to begin commercial activities in the United States safely, in an organized way, and in full compliance.",
+      ],
+    },
+  },
+  "visas-de-inversionista": {
+    en: {
+      title: "Investor Visas",
+      description: "We design and execute E-2/EB-5 visa strategies with legal, documentary, and business-viability focus.",
+      details: [
+        "Investor visas, such as the E-2 Treaty Investor visa, allow citizens of treaty countries to enter the United States to invest a substantial amount of capital in a U.S. business and direct its operations. The applicant must show that the business is real and active, that the investment is at risk for profit generation, and that the applicant has control or at least 50% ownership.",
+        "In some cases, programs such as EB-5 allow permanent residence through a qualifying investment that creates at least 10 full-time jobs in the United States.",
+        "In practice, these investments often begin at approximately **$100,000 USD**, depending on the type of business and the strength of the proposed project. Beyond the amount, the investment must meet legal standards by being real, active, and profit-oriented.",
+        "As part of our service, we provide full support for all visa requirements, including:",
+        "1. **Investment structuring advisory**. We help define a business model aligned with immigration rules and case viability.",
+        "2. **Document preparation and review**. We assist in assembling all required evidence to support the investment and business operations.",
+        "3. **Visa application**. We manage the complete investor visa filing process, ensuring legal and immigration compliance.",
+        "4. **U.S. attorney representation**. The process is carried out with U.S.-based legal representation and may proceed through change of status (if already in the U.S.) or consular processing (from abroad), depending on the applicant's situation.",
+        "With this framework, applicants can present a strong case to obtain investment-based immigration status and operate their business in the United States legally.",
+      ],
+    },
+  },
+  "inmigracion-basada-en-familia": {
+    en: {
+      title: "Family-Based Immigration",
+      description: "We guide family petitions before USCIS with strategy, continuous follow-up, and full case preparation.",
+      details: [
+        "Family-based immigration allows U.S. citizens and lawful permanent residents to petition for permanent residence for eligible family members, including spouses, children, parents, and siblings. The process generally begins by filing a family petition with USCIS to establish the qualifying relationship.",
+        "As part of our service, we provide full support throughout the immigration process, ensuring proper compliance and thorough case preparation:",
+        "1. **Case and eligibility assessment**. We analyze both petitioner and beneficiary circumstances to determine viability and the best strategy.",
+        "2. **Family petition preparation and filing**. We assist with proper package assembly and filing before USCIS, including supporting relationship evidence.",
+        "3. **Process follow-up**. We provide continuous guidance, respond to additional requests, and keep clients informed at every stage.",
+        "4. **Adjustment of status or consular process**. We advise based on the case: adjustment of status in the U.S. or consular processing abroad.",
+        "5. **Interview preparation**. We prepare applicants for the immigration interview so they are ready and understand the process.",
+        "With this support, we make the process clearer, more organized, and stronger, increasing the chances of success in obtaining permanent residence for your relatives.",
+      ],
+    },
+  },
+  "ciudadania-y-naturalizacion": {
+    en: {
+      title: "Citizenship and Naturalization",
+      description: "We prepare naturalization applications with documentary strategy and end-to-end support.",
+      details: [
+        "Naturalization is the process by which a lawful permanent resident can become a U.S. citizen. According to USCIS, applicants generally must meet requirements such as maintaining permanent residence for a specified period, demonstrating good moral character, basic English knowledge, and passing a U.S. history and government exam.",
+        "As part of our service, we provide comprehensive support throughout the process, helping applicants meet requirements and prepare properly:",
+        "1. **Eligibility review**. We assess whether the applicant meets the requirements to begin naturalization, including residence timelines and background factors.",
+        "2. **Application preparation and filing**. We assist with completion and submission of the USCIS application, ensuring complete and accurate information.",
+        "3. **Document review**. We support collection and organization of required supporting documents.",
+        "4. **Exam and interview preparation**. We guide applicants on the English and civics test as well as interview expectations.",
+        "5. **Case follow-up**. We provide ongoing support, handle additional requests, and keep clients informed at each stage.",
+        "With this support, applicants can move through naturalization in a safer, more organized way and with stronger chances of obtaining U.S. citizenship.",
+      ],
+    },
+  },
+  "consultoria-corporativa": {
+    en: {
+      title: "Corporate Consulting",
+      description: "Comprehensive corporate legal advisory to operate with compliance, internal order, and strategic decision-making.",
+      details: [
+        "We provide strategic advisory to companies that operate or plan to operate in the United States, including regulatory compliance, corporate structuring, coordination with accounting and financial advisors, and legal requirement assessment for foreign investors. This service helps clients operate with stronger legal certainty and compliance.",
+        "1. **Legal and regulatory compliance**. Comprehensive oversight and management of local and international legal obligations, including internal compliance program implementation. This approach strengthens both external compliance and internal compliance culture. We also support identification of applicable obligations, internal control implementation, and ongoing monitoring:",
+        "• Corporate obligations",
+        "• Licenses and permits",
+        "• Industry regulations",
+        "• Internal policies and codes of conduct",
+        "• Controls and oversight mechanisms",
+        "2. **Corporate governance**. Design and implementation of internal policies, manuals, and best practices for decision-making, partner roles, board governance, and internal controls. We support clear operating rules that strengthen organization and strategic decisions.",
+        "3. **Contracts and business relationships**. Drafting, review, and negotiation of key agreements. We protect client interests, reduce legal risk, and strengthen commercial relationships:",
+        "• Supplier agreements",
+        "• Client agreements",
+        "• Joint ventures",
+        "• Non-disclosure agreements (NDA)",
+        "4. **Strategic legal planning**. Support for business decisions considering legal, tax, and operational implications to drive sustainable growth. We help evaluate scenarios and risks for informed decisions aligned with business goals.",
+        "5. **Mergers, acquisitions, and restructuring**. Assistance in M&A transactions, corporate reorganization, due diligence, and term negotiation, from initial analysis through execution, ensuring an orderly and compliant process.",
+        "6. **Legal coordination**. We act as a central legal management point, coordinating processes, advisors, and involved teams. This provides integrated supervision with consistency, control, and alignment to business strategy.",
+      ],
+    },
+  },
+  "visas-de-empleo": {
+    en: {
+      title: "Employment Visas",
+      description: "We handle employment visas for qualified profiles and sponsoring employers with technical immigration focus.",
+      details: [
+        "Employment visas allow qualified foreign workers to enter the United States to perform professional, technical, artistic, or specialized roles. Depending on category, a U.S. employer may need to file a USCIS petition showing need and eligibility for the offered position.",
+        "**Main employment visa categories**:",
+        "• **L-1 Visa (Intra-company transfer)**. For executives, managers, or specialized-knowledge employees transferred from a foreign company to a U.S. affiliate or subsidiary.",
+        "• **O-1 Visa (Extraordinary ability)**. For individuals with outstanding abilities in business, science, arts, education, or sports with national or international recognition.",
+        "• **P Visa (Athletes, artists, and entertainment)**. For athletes, artists, or entertainment groups participating in specific events or performances in the U.S.",
+        "• **TN Visa (Treaty professionals - Mexico/Canada)**. Available to Mexican and Canadian citizens under treaty provisions for specific professions with a U.S. job offer.",
+        "As part of our service, we provide end-to-end support throughout the immigration process:",
+        "1. **Profile and eligibility assessment**. We evaluate applicant experience, qualifications, and employer needs to determine the most suitable visa category.",
+        "2. **Sponsoring employer advisory**. We guide employers on legal obligations, offer structuring, and immigration authority requirements.",
+        "3. **Petition preparation and filing**. We assist in preparing and submitting the USCIS package with evidence supporting worker and position eligibility.",
+        "4. **Applicant documentation preparation**. We support organization of personal, academic, and professional documents.",
+        "5. **Visa processing stage**. We guide the final phase, including **consular processing** from abroad or other applicable procedures depending on the case.",
+        "6. **Case follow-up**. We provide ongoing support, address additional requests, and keep clients informed at every stage.",
+        "With this support, both employer and worker have a clear, structured roadmap that facilitates lawful employment visa approval and start of operations in the U.S.",
+      ],
+    },
+  },
+  "traducciones-espanol-ingles": {
+    en: {
+      title: "Spanish - English Translations",
+      description: "Specialized translation of legal, corporate, and immigration documents with precise terminology and formal validity.",
+      details: [
+        "Translation service for legal, corporate, and immigration documents from Spanish to English and vice versa, ensuring terminology accuracy and compliance with standards required for official filings before U.S. authorities.",
+        "As part of our service, we provide comprehensive support to ensure documents meet formal and legal requirements:",
+        "1. **Document review and analysis**. We evaluate document type and intended use to ensure translation meets required standards.",
+        "2. **Specialized translation**. We deliver legal/technical translations preserving terminology and context for content validity.",
+        "3. **Formatting and adaptation**. We align translated documents with the original format for official submission readiness.",
+        "4. **Certified translation (when applicable)**. We provide certified translations according to immigration or institutional requirements in the U.S.",
+        "5. **Quality control and final review**. We conduct detailed checks for accuracy, consistency, and formal compliance.",
+        "6. **Guidance on document use**. We advise on proper presentation of translations within legal or immigration processes.",
+        "With this service, clients receive precise and reliable translated documents ready for official procedures in the United States.",
+      ],
+    },
+  },
+};
 
 const numberPrefixPattern = /^(\d+)\.\s+(.+)$/;
 const bulletPrefixPattern = /^[•-]\s+(.+)$/;
@@ -292,6 +614,10 @@ const renderInlineFormatting = (text) => {
 };
 
 export default function App() {
+  const [language, setLanguage] = useState(() => {
+    const saved = window.localStorage.getItem("terminel_lang");
+    return saved === "en" ? "en" : "es";
+  });
   const [openMenu, setOpenMenu] = useState(false);
   const [openDrop, setOpenDrop] = useState(false);
   const [policyOpen, setPolicyOpen] = useState(false);
@@ -302,6 +628,8 @@ export default function App() {
   }));
 
   const dropRef = useRef(null);
+  const t = UI_TEXT[language];
+  const essence = ESSENCE_CONTENT[language];
   const currentPath = route.path;
   const isEssencePage = currentPath === "/mision-vision-valores";
   const isServicesPage = currentPath === "/servicios";
@@ -331,6 +659,11 @@ export default function App() {
     window.addEventListener("popstate", onPopState);
     return () => window.removeEventListener("popstate", onPopState);
   }, []);
+
+  useEffect(() => {
+    window.localStorage.setItem("terminel_lang", language);
+    document.documentElement.lang = language === "en" ? "en" : "es";
+  }, [language]);
 
   useEffect(() => {
     if (currentPath !== "/") return;
@@ -390,9 +723,18 @@ export default function App() {
   const requestedService = new URLSearchParams(route.search).get("servicio");
   const selectedService =
     SERVICES_WITH_IDS.find((service) => service.id === requestedService) ?? SERVICES_WITH_IDS[0];
+  const getServiceDisplay = (service) => {
+    const localized = SERVICE_LOCALIZED[service.id]?.[language];
+    return {
+      title: localized?.title ?? service.title,
+      description: localized?.description ?? service.description,
+      details: localized?.details ?? service.details,
+    };
+  };
+  const selectedServiceDisplay = useMemo(() => getServiceDisplay(selectedService), [selectedService, language]);
   const selectedServiceBlocks = useMemo(
-    () => groupServiceDetails(selectedService.details),
-    [selectedService.details]
+    () => groupServiceDetails(selectedServiceDisplay.details ?? selectedService.details),
+    [selectedServiceDisplay.details, selectedService.details]
   );
   const selectedServiceImagePosition = selectedService.id === "visas-de-empleo" ? "center 29%" : "center center";
 
@@ -405,7 +747,7 @@ export default function App() {
             <button
               onClick={() => navigateTo("/")}
               className="flex items-center gap-3 pr-3 shrink-0"
-              aria-label="Ir al inicio"
+              aria-label={t.nav.logoAria}
             >
               <img
                 src="/logo-horizontal.png"
@@ -418,7 +760,7 @@ export default function App() {
             <ul className="hidden md:flex items-center gap-6 text-sm">
               <li>
                 <button onClick={() => navigateTo("/")} className="nav-link-hover">
-                  Inicio
+                  {t.nav.home}
                 </button>
               </li>
               <li className="relative" ref={dropRef}>
@@ -428,7 +770,7 @@ export default function App() {
                   aria-expanded={openDrop}
                   aria-haspopup="true"
                 >
-                  Servicios
+                  {t.nav.services}
                   <svg className="w-3.5 h-3.5" viewBox="0 0 20 20" fill="currentColor">
                     <path d="M5.23 7.21a.75.75 0 011.06.02L10 10.94l3.71-3.71a.75.75 0 111.06 1.06l-4.24 4.24a.75.75 0 01-1.06 0L5.25 8.29a.75.75 0 01-.02-1.08z" />
                   </svg>
@@ -447,7 +789,7 @@ export default function App() {
                           onClick={() => navigateToService(it.id)}
                           role="menuitem"
                         >
-                          {it.title}
+                          {getServiceDisplay(it).title}
                         </button>
                       </li>
                     ))}
@@ -457,34 +799,36 @@ export default function App() {
 
               <li>
                 <a href={sectionHref("nosotros")} className="nav-link-hover">
-                  Nosotros
+                  {t.nav.about}
                 </a>
               </li>
               <li>
                 <button onClick={() => navigateTo("/mision-vision-valores")} className="nav-link-hover">
-                  Misión y Valores
+                  {t.nav.essence}
                 </button>
               </li>
               <li>
                 <button onClick={() => navigateTo("/contacto")} className="nav-link-hover">
-                  Contacto
+                  {t.nav.contact}
                 </button>
               </li>
               <li className="flex items-center gap-3 pl-1">
                 <button
                   type="button"
-                  className="lang-pill"
-                  aria-label="Idioma Español (visual)"
-                  title="Cambiar a Español (próximamente)"
+                  className={`lang-pill ${language === "es" ? "bg-white/15 border-white/60" : ""}`}
+                  onClick={() => setLanguage("es")}
+                  aria-label={t.nav.langEsAria}
+                  title={t.nav.langEsAria}
                 >
                   <span className="flag-dot flag-mx" aria-hidden="true" />
                   MX
                 </button>
                 <button
                   type="button"
-                  className="lang-pill"
-                  aria-label="Idioma Inglés (visual)"
-                  title="Cambiar a Inglés (próximamente)"
+                  className={`lang-pill ${language === "en" ? "bg-white/15 border-white/60" : ""}`}
+                  onClick={() => setLanguage("en")}
+                  aria-label={t.nav.langEnAria}
+                  title={t.nav.langEnAria}
                 >
                   <span className="flag-dot flag-us" aria-hidden="true" />
                   US
@@ -496,7 +840,7 @@ export default function App() {
               {/* Redes sociales */}
               <div className="flex items-center gap-3 text-white">
                 <a
-                  href="https://facebook.com/tu-pagina"
+                  href="https://www.facebook.com/TerminelLawConsulting"
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="Facebook"
@@ -505,7 +849,7 @@ export default function App() {
                   <FaFacebookF className="w-4 h-4" />
                 </a>
                 <a
-                  href="https://instagram.com/tu-usuario"
+                  href="https://www.instagram.com/terminellaw/"
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="Instagram"
@@ -514,7 +858,7 @@ export default function App() {
                   <FaInstagram className="w-4 h-4" />
                 </a>
                 <a
-                  href="https://tiktok.com/@tu-usuario"
+                  href="https://www.tiktok.com/@terminellaw"
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="TikTok"
@@ -526,7 +870,7 @@ export default function App() {
 
               {/* CTA */}
               <button onClick={() => navigateTo("/contacto")} className="btn cta-hover bg-white text-[#2C344C]">
-                Agenda una consulta
+                {t.nav.cta}
               </button>
             </div>
 
@@ -534,7 +878,7 @@ export default function App() {
             <button
               className="md:hidden p-2"
               onClick={() => setOpenMenu((v) => !v)}
-              aria-label="Abrir menú"
+              aria-label={t.nav.openMenu}
             >
               <svg className="w-6 h-6" viewBox="0 0 24 24" fill="none">
                 <path
@@ -550,7 +894,7 @@ export default function App() {
           {openMenu && (
             <div className="md:hidden mt-3 rounded-xl bg-white text-slate-800 shadow">
               <details open className="border-b">
-                <summary className="px-4 py-2 cursor-pointer select-none">Servicios</summary>
+                <summary className="px-4 py-2 cursor-pointer select-none">{t.nav.services}</summary>
                 <div className="pl-2 pb-2">
                   {SERVICES_WITH_IDS.map((it) => (
                     <button
@@ -558,38 +902,48 @@ export default function App() {
                       onClick={() => navigateToService(it.id)}
                       className="block px-4 py-2 hover:bg-slate-50 w-full text-left"
                     >
-                      {it.title}
+                      {getServiceDisplay(it).title}
                     </button>
                   ))}
                 </div>
               </details>
               <a href={sectionHref("nosotros")} onClick={() => setOpenMenu(false)} className="block px-4 py-2">
-                Nosotros
+                {t.nav.about}
               </a>
               <button
                 onClick={() => navigateTo("/")}
                 className="block px-4 py-2 text-left w-full"
               >
-                Inicio
+                {t.nav.home}
               </button>
               <button
                 onClick={() => navigateTo("/mision-vision-valores")}
                 className="block px-4 py-2 text-left w-full"
               >
-                Misión y Valores
+                {t.nav.essence}
               </button>
               <button
                 onClick={() => navigateTo("/contacto")}
                 className="block px-4 py-2 w-full text-left"
               >
-                Contacto
+                {t.nav.contact}
               </button>
               <div className="px-4 py-2 flex items-center gap-3">
-                <button type="button" className="lang-pill text-xs" title="Cambiar a Español (próximamente)">
+                <button
+                  type="button"
+                  className={`lang-pill text-xs ${language === "es" ? "bg-white/15 border-[#2C344C]/60" : ""}`}
+                  onClick={() => setLanguage("es")}
+                  title={t.nav.langEsAria}
+                >
                   <span className="flag-dot flag-mx" aria-hidden="true" />
                   MX
                 </button>
-                <button type="button" className="lang-pill text-xs" title="Cambiar a Inglés (próximamente)">
+                <button
+                  type="button"
+                  className={`lang-pill text-xs ${language === "en" ? "bg-white/15 border-[#2C344C]/60" : ""}`}
+                  onClick={() => setLanguage("en")}
+                  title={t.nav.langEnAria}
+                >
                   <span className="flag-dot flag-us" aria-hidden="true" />
                   US
                 </button>
@@ -599,7 +953,7 @@ export default function App() {
                   onClick={() => navigateTo("/contacto")}
                   className="btn cta-hover w-full bg-[#2C344C] text-white"
                 >
-                  Agenda una consulta
+                  {t.nav.cta}
                 </button>
               </div>
               <div className="px-4 pb-4 flex items-center gap-3 text-[#2C344C]">
@@ -649,22 +1003,21 @@ export default function App() {
 
           <div className="relative mx-auto max-w-7xl px-4 py-16 md:py-20">
             <div className="max-w-3xl">
-              <p className="uppercase tracking-[0.18em] text-xs text-white/75 mb-3">Nuestra Firma</p>
-              <h1 className="font-[Bodoni Moda] text-3xl md:text-5xl text-white mb-4">Misión, Visión y Valores</h1>
+              <p className="uppercase tracking-[0.18em] text-xs text-white/75 mb-3">{essence.eyebrow}</p>
+              <h1 className="font-[Bodoni Moda] text-3xl md:text-5xl text-white mb-4">{essence.title}</h1>
               <p className="text-white/80 leading-relaxed">
-                Estructuramos nuestro trabajo bajo principios legales sólidos para ofrecer un servicio transnacional
-                confiable, estratégico y orientado a resultados para cada cliente.
+                {essence.subtitle}
               </p>
               <button
                 onClick={() => navigateTo("/")}
                 className="mt-6 btn border border-white/40 text-white hover:bg-white/10"
               >
-                Volver al inicio
+                {essence.backHome}
               </button>
             </div>
 
             <div className="mt-10 grid gap-6 md:grid-cols-3">
-              {ESSENCE_PILLARS.map((pillar) => (
+              {essence.pillars.map((pillar) => (
                 <article
                   key={pillar.title}
                   className="rounded-2xl border border-white/20 bg-white/10 backdrop-blur-sm p-6 shadow-lg shadow-black/20 transition-transform duration-300 hover:scale-[1.06]"
@@ -676,12 +1029,12 @@ export default function App() {
             </div>
 
             <div className="mt-12">
-              <h3 className="font-[Bodoni Moda] text-2xl md:text-3xl text-white mb-2">Nuestros Valores</h3>
+              <h3 className="font-[Bodoni Moda] text-2xl md:text-3xl text-white mb-2">{essence.valuesTitle}</h3>
               <p className="text-white/75 text-sm md:text-base mb-6">
-                Principios que guían cada decisión jurídica y cada relación profesional en Terminel Law Consulting.
+                {essence.valuesSubtitle}
               </p>
               <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-                {ESSENCE_VALUES.map((value) => (
+                {essence.values.map((value) => (
                   <article
                     key={value.title}
                     className="rounded-2xl border border-white/20 bg-[#1F2942]/80 p-5 shadow-md shadow-black/20 transition-transform duration-300 hover:scale-[1.06]"
@@ -698,11 +1051,10 @@ export default function App() {
         <section className="bg-[#F4F7FC]">
           <div className="mx-auto max-w-7xl px-4 py-14 md:py-16">
             <div className="mb-8">
-              <p className="uppercase tracking-[0.18em] text-xs text-[#2C344C]/70 mb-2">Terminel Law Consulting</p>
-              <h1 className="font-[Bodoni Moda] text-3xl md:text-5xl text-[#2C344C] mb-3">Nuestros Servicios</h1>
+              <p className="uppercase tracking-[0.18em] text-xs text-[#2C344C]/70 mb-2">{t.servicesPage.eyebrow}</p>
+              <h1 className="font-[Bodoni Moda] text-3xl md:text-5xl text-[#2C344C] mb-3">{t.servicesPage.title}</h1>
               <p className="text-slate-700 max-w-3xl">
-                Selecciona un servicio para conocer su alcance legal y cómo puede ayudarte en tus proyectos entre
-                México y Estados Unidos.
+                {t.servicesPage.subtitle}
               </p>
             </div>
 
@@ -711,6 +1063,7 @@ export default function App() {
                 <div className="space-y-2">
                   {SERVICES_WITH_IDS.map((service) => {
                     const isActive = selectedService.id === service.id;
+                    const serviceDisplay = getServiceDisplay(service);
                     return (
                       <button
                         key={service.id}
@@ -721,7 +1074,7 @@ export default function App() {
                             : "bg-[#EAF0FB] text-[#2C344C] hover:bg-[#dbe7fb]"
                         }`}
                       >
-                        {service.title}
+                        {serviceDisplay.title}
                       </button>
                     );
                   })}
@@ -735,13 +1088,13 @@ export default function App() {
                 <div className="relative h-64 rounded-lg overflow-hidden mb-8">
                   <img
                     src={selectedService.image}
-                    alt={selectedService.title}
+                    alt={selectedServiceDisplay.title}
                     className="w-full h-full object-cover"
                     style={{ objectPosition: selectedServiceImagePosition }}
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
                 </div>
-                <h2 className="font-[Bodoni Moda] text-2xl md:text-4xl text-[#2C344C] mb-5">{selectedService.title}</h2>
+                <h2 className="font-[Bodoni Moda] text-2xl md:text-4xl text-[#2C344C] mb-5">{selectedServiceDisplay.title}</h2>
                 <div className="space-y-5 text-slate-700 leading-relaxed text-base md:text-lg">
                   {selectedServiceBlocks.map((block) => {
                     if (block.type === "list") {
@@ -823,7 +1176,7 @@ export default function App() {
                 </div>
                 <div className="mt-8">
                   <button onClick={() => navigateTo("/contacto")} className="btn btn-primary">
-                    Solicitar consulta sobre este servicio
+                    {t.servicesPage.cta}
                   </button>
                 </div>
               </article>
@@ -834,56 +1187,38 @@ export default function App() {
         <section className="bg-[#F4F7FC]">
           <div className="mx-auto max-w-7xl px-4 py-14 md:py-16">
             <div className="mb-8">
-              <p className="uppercase tracking-[0.18em] text-xs text-[#2C344C]/70 mb-2">Atención Legal</p>
-              <h1 className="font-[Bodoni Moda] text-3xl md:text-5xl text-[#2C344C] mb-3">Solicitud y Contacto</h1>
-              <p className="text-slate-700 max-w-3xl">
-                Completa el formulario para iniciar tu consulta con nuestro equipo. Te responderemos con una ruta
-                legal clara y estratégica según tu objetivo.
+              <p className="uppercase tracking-[0.18em] text-xs text-[#2C344C]/70 mb-2">{t.contactPage.eyebrow}</p>
+              <h1 className="font-[Bodoni Moda] text-3xl md:text-5xl text-[#2C344C] mb-3">{t.contactPage.title}</h1>
+              <p className="text-slate-700 max-w-3xl text-justify">
+                {t.contactPage.subtitle}
               </p>
             </div>
 
             <div className="rounded-3xl border border-slate-200 bg-white shadow-xl shadow-slate-900/5 p-6 md:p-10">
-              <h2 className="font-[Bodoni Moda] text-2xl md:text-3xl text-slate-900 mb-5">Formulario de Contacto</h2>
-              <ConsultationForm />
+              <h2 className="font-[Bodoni Moda] text-2xl md:text-3xl text-slate-900 mb-5">{t.contactPage.formTitle}</h2>
+              <ConsultationForm language={language} />
             </div>
 
             <div className="mt-10 grid gap-6 md:grid-cols-2">
               <article className="rounded-2xl border border-slate-200 bg-white p-6 shadow-md shadow-slate-900/5">
-                <h3 className="font-[Bodoni Moda] text-2xl text-[#2C344C] mb-4">Política de Privacidad</h3>
+                <h3 className="font-[Bodoni Moda] text-2xl text-[#2C344C] mb-4">{t.footer.privacyTitle}</h3>
                 <div className="space-y-4 text-slate-700 leading-relaxed">
-                  <p>
-                    En Terminel Law Consulting valoramos y protegemos la privacidad de nuestros usuarios. Toda la
-                    información personal que se recopile a través de este sitio web será utilizada exclusivamente para
-                    fines de contacto, prestación de servicios legales y comunicación directa con el cliente. No
-                    compartiremos ni venderemos su información a terceros sin su consentimiento expreso, salvo cuando
-                    lo exija la ley.
-                  </p>
-                  <p>
-                    Al utilizar este sitio, usted acepta nuestra política de privacidad y el tratamiento de datos de
-                    acuerdo con la legislación aplicable en materia de protección de datos.
-                  </p>
+                  {t.footer.privacyText.split("\n").map((paragraph, idx) => (
+                    <p key={`privacy-${idx}`} className="text-justify">
+                      {paragraph}
+                    </p>
+                  ))}
                 </div>
               </article>
 
               <article className="rounded-2xl border border-slate-200 bg-white p-6 shadow-md shadow-slate-900/5">
-                <h3 className="font-[Bodoni Moda] text-2xl text-[#2C344C] mb-4">Términos y Condiciones de Uso</h3>
+                <h3 className="font-[Bodoni Moda] text-2xl text-[#2C344C] mb-4">{t.footer.termsTitle}</h3>
                 <div className="space-y-4 text-slate-700 leading-relaxed">
-                  <p>
-                    El uso de este sitio web implica la aceptación plena y sin reservas de los presentes términos y
-                    condiciones. Toda la información contenida en este sitio es de carácter general y no constituye
-                    asesoría legal específica. Para recibir asesoría personalizada debe contactar directamente con
-                    Terminel Law Consulting.
-                  </p>
-                  <p>
-                    Queda prohibida la reproducción, distribución o modificación de los contenidos del sitio sin la
-                    autorización expresa de Terminel Law Consulting. El usuario se compromete a utilizar el sitio
-                    conforme a la ley, la moral y el orden público.
-                  </p>
-                  <p>
-                    Terminel Law Consulting no se hace responsable por el mal uso del sitio ni por decisiones tomadas
-                    con base en la información publicada. Nos reservamos el derecho de modificar estos términos en
-                    cualquier momento sin previo aviso.
-                  </p>
+                  {t.footer.termsText.split("\n").map((paragraph, idx) => (
+                    <p key={`terms-${idx}`} className="text-justify">
+                      {paragraph}
+                    </p>
+                  ))}
                 </div>
               </article>
             </div>
@@ -901,20 +1236,22 @@ export default function App() {
               <div className="max-w-4xl">
                 <p className="text-xs uppercase tracking-[0.2em] text-[#9fb8ff] mb-4">Terminel Law Consulting</p>
                 <h1 className="font-[Bodoni Moda] text-5xl md:text-7xl lg:text-8xl leading-[0.9] text-white mb-6">
-                  Tu aliado legal entre
+                  {t.home.heroTitleLine1}
                   <br />
-                  México y Estados Unidos
+                  {t.home.heroTitleLine2}
                 </h1>
-                <p className="text-lg md:text-xl text-white/85 max-w-3xl leading-relaxed text-justify mb-8">{INSTITUTIONAL_TEXT}</p>
+                <p className="text-lg md:text-xl text-white/85 max-w-3xl leading-relaxed text-justify mb-8">
+                  {t.home.institutionalText}
+                </p>
                 <div className="flex flex-wrap gap-4">
                   <button onClick={() => navigateTo("/contacto")} className="btn btn-primary">
-                    Agenda una consulta
+                    {t.nav.cta}
                   </button>
                   <button
                     onClick={() => document.getElementById("servicios")?.scrollIntoView({ behavior: "smooth" })}
                     className="btn border border-white/40 text-white hover:bg-white/10"
                   >
-                    Nuestros servicios
+                    {t.home.heroSecondaryCta}
                   </button>
                 </div>
               </div>
@@ -924,11 +1261,14 @@ export default function App() {
           {/* SERVICIOS */}
           <section id="servicios" className="bg-white py-20">
             <div className="mx-auto max-w-7xl px-4 py-16">
-              <p className="uppercase tracking-[0.2em] text-base md:text-lg text-[#3b82f6] mb-3">Nuestras Especialidades</p>
-              <h2 className="font-[Bodoni Moda] text-4xl md:text-6xl text-slate-900 mb-12">Áreas de práctica</h2>
+              <p className="uppercase tracking-[0.2em] text-base md:text-lg text-[#3b82f6] mb-3">{t.home.specialtiesEyebrow}</p>
+              <h2 className="font-[Bodoni Moda] text-4xl md:text-6xl text-slate-900 mb-12">{t.home.specialtiesTitle}</h2>
 
               <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
                 {SERVICES_WITH_IDS.map((service, i) => (
+                  (() => {
+                    const serviceDisplay = getServiceDisplay(service);
+                    return (
                   <article
                     key={service.id}
                     id={service.id}
@@ -947,10 +1287,10 @@ export default function App() {
                     <div className="absolute inset-0 border border-white/10 rounded-2xl" />
                     <div className="absolute bottom-0 p-7">
                       <span className="text-xs uppercase tracking-[0.2em] text-[#9fb8ff] mb-2 block">
-                        {service.index} // Área de práctica
+                        {service.index} // {t.home.areaLabel}
                       </span>
-                      <h3 className="font-[Bodoni Moda] text-2xl md:text-3xl text-white mb-2">{service.title}</h3>
-                      <p className="text-sm text-white/80 leading-relaxed max-w-md text-justify">{service.description}</p>
+                      <h3 className="font-[Bodoni Moda] text-2xl md:text-3xl text-white mb-2">{serviceDisplay.title}</h3>
+                      <p className="text-sm text-white/80 leading-relaxed max-w-md text-justify">{serviceDisplay.description}</p>
                       <button
                         onClick={(e) => {
                           e.stopPropagation();
@@ -958,10 +1298,12 @@ export default function App() {
                         }}
                         className="mt-5 btn bg-[#2C344C] text-white border border-[#2C344C] hover:bg-[#1f2a44] shadow-md"
                       >
-                        Solicitar más información
+                        {t.home.cardCta}
                       </button>
                     </div>
                   </article>
+                    );
+                  })()
                 ))}
               </div>
             </div>
@@ -972,28 +1314,12 @@ export default function App() {
             <div className="mx-auto max-w-7xl px-4 py-16">
               <div className="grid lg:grid-cols-2 gap-16 items-start">
                   <div className="space-y-4">
-                    <p className="uppercase tracking-[0.2em] text-xs text-[#2C344C]/70">Nuestra Firma</p>
-                    <h2 className="font-[Bodoni Moda] text-4xl md:text-5xl text-slate-900">Sobre Nosotros</h2>
+                    <p className="uppercase tracking-[0.2em] text-xs text-[#2C344C]/70">{t.home.aboutEyebrow}</p>
+                    <h2 className="font-[Bodoni Moda] text-4xl md:text-5xl text-slate-900">{t.home.aboutTitle}</h2>
                     <div className="space-y-5 text-slate-700 text-base md:text-lg leading-relaxed text-justify">
-                      <p>
-                        Terminel Law Consulting es una firma legal especializada en derecho corporativo, derecho
-                        migratorio y derecho internacional privado. Asesoramos a personas, inversionistas y empresas
-                        que desarrollan proyectos entre México y Estados Unidos, ofreciendo soluciones legales
-                        estratégicas enfocadas en cumplimiento normativo, estructuración empresarial y movilidad
-                        internacional.
-                      </p>
-                      <p>
-                        La firma fue fundada por el Mtro. Iván Terminel, abogado mexicano con experiencia en el ámbito
-                        legal transnacional y en la preparación de procesos migratorios y corporativos para clientes que
-                        buscan establecerse, invertir o expandir sus actividades en ambos países. Su práctica se
-                        caracteriza por un enfoque estratégico, comunicación clara y atención cercana al cliente.
-                      </p>
-                      <p>
-                        En colaboración con aliados profesionales en áreas legales, contables, financieras e
-                        inmobiliarias, Terminel Law Consulting ofrece un servicio integral diseñado para brindar
-                        seguridad jurídica y facilitar el cumplimiento de los objetivos personales y empresariales de sus
-                        clientes.
-                      </p>
+                      {t.home.aboutParagraphs.map((paragraph) => (
+                        <p key={paragraph}>{paragraph}</p>
+                      ))}
                     </div>
                   </div>
                   <div className="space-y-6">
@@ -1006,10 +1332,7 @@ export default function App() {
                     </div>
                     <div className="rounded-2xl border border-slate-200 bg-white p-8 shadow-md shadow-slate-900/5">
                     <div className="space-y-6">
-                      {[
-                        { number: "+11", label: "Años de Experiencia" },
-                        { number: "+200", label: "visas aprobadas" },
-                      ].map((stat) => (
+                      {t.home.stats.map((stat) => (
                         <div key={stat.label} className="border-b border-slate-200 pb-6 last:border-0 last:pb-0">
                           <p className="font-[Bodoni Moda] text-4xl text-slate-900 mb-1">{stat.number}</p>
                           <p className="text-sm text-slate-600">{stat.label}</p>
@@ -1052,25 +1375,22 @@ export default function App() {
           <span>© {new Date().getFullYear()} Terminel Law Consulting</span>
           <div className="flex gap-4">
             <button onClick={() => setPolicyOpen(true)} className="hover:opacity-90 underline underline-offset-4">
-              Privacidad
+              {t.footer.privacy}
             </button>
             <button onClick={() => setTermsOpen(true)} className="hover:opacity-90 underline underline-offset-4">
-              Términos
+              {t.footer.terms}
             </button>
           </div>
         </div>
       </footer>
 
       {/* MODALES */}
-      <Modal open={policyOpen} onClose={() => setPolicyOpen(false)} title="Política de Privacidad">
-        {`En Terminel Law Consulting valoramos y protegemos la privacidad de nuestros usuarios. Toda la información personal que se recopile a través de este sitio web será utilizada exclusivamente para fines de contacto, prestación de servicios legales y comunicación directa con el cliente. No compartiremos ni venderemos su información a terceros sin su consentimiento expreso, salvo cuando lo exija la ley.
-Al utilizar este sitio, usted acepta nuestra política de privacidad y el tratamiento de datos de acuerdo con la legislación aplicable en materia de protección de datos.`}
+      <Modal open={policyOpen} onClose={() => setPolicyOpen(false)} title={t.footer.privacyTitle}>
+        {t.footer.privacyText}
       </Modal>
 
-      <Modal open={termsOpen} onClose={() => setTermsOpen(false)} title="Términos y Condiciones de Uso">
-        {`El uso de este sitio web implica la aceptación plena y sin reservas de los presentes términos y condiciones. Toda la información contenida en este sitio es de carácter general y no constituye asesoría legal específica. Para recibir asesoría personalizada debe contactar directamente con Terminel Law Consulting.
-Queda prohibida la reproducción, distribución o modificación de los contenidos del sitio sin la autorización expresa de Terminel Law Consulting. El usuario se compromete a utilizar el sitio conforme a la ley, la moral y el orden público.
-Terminel Law Consulting no se hace responsable por el mal uso del sitio ni por decisiones tomadas con base en la información publicada. Nos reservamos el derecho de modificar estos términos en cualquier momento sin previo aviso.`}
+      <Modal open={termsOpen} onClose={() => setTermsOpen(false)} title={t.footer.termsTitle}>
+        {t.footer.termsText}
       </Modal>
     </>
   );
