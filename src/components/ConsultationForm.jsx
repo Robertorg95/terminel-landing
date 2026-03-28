@@ -163,10 +163,7 @@ export default function ConsultationForm({ language = "es" }) {
         return;
       }
 
-      const popup = window.open(data.url, "_blank", "noopener,noreferrer");
-      if (!popup) {
-        window.location.href = data.url;
-      }
+      window.location.assign(data.url);
     } catch {
       setSubmitError(t.backendError);
     } finally {

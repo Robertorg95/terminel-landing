@@ -276,7 +276,7 @@ app.post("/api/create-checkout-session", async (req, res) => {
 
     if (STRIPE_MOCK_MODE) {
       const mockSessionId = `cs_mock_${submissionId}`;
-      const mockSuccessUrl = `${FRONTEND_URL}/contacto?payment=success&session_id=${mockSessionId}&mock=true`;
+      const mockSuccessUrl = `${FRONTEND_URL}/cita-agendada?payment=success&session_id=${mockSessionId}&mock=true`;
       upsertSubmission({
         ...submission,
         stripeSessionId: mockSessionId,
@@ -293,7 +293,7 @@ app.post("/api/create-checkout-session", async (req, res) => {
     const session = await stripe.checkout.sessions.create({
       mode: "payment",
       customer_email: formData.email,
-      success_url: `${FRONTEND_URL}/contacto?payment=success&session_id={CHECKOUT_SESSION_ID}`,
+      success_url: `${FRONTEND_URL}/cita-agendada?payment=success&session_id={CHECKOUT_SESSION_ID}`,
       cancel_url: `${FRONTEND_URL}/contacto?payment=cancel`,
       line_items: [
         {

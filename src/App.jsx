@@ -318,6 +318,13 @@ const UI_TEXT = {
         "Completa el formulario para iniciar tu consulta con nuestro equipo. Te responderemos con una ruta legal clara y estratégica según tu objetivo.",
       formTitle: "Formulario de Contacto",
     },
+    bookingPage: {
+      eyebrow: "Confirmación",
+      title: "Tu cita fue agendada",
+      subtitle:
+        "Tu pago fue recibido correctamente. Nuestro equipo revisará tu solicitud y te contactará para confirmar los detalles finales de tu consulta.",
+      homeButton: "Volver al inicio",
+    },
     footer: {
       privacy: "Privacidad",
       terms: "Términos",
@@ -378,6 +385,13 @@ Terminel Law Consulting no se hace responsable por el mal uso del sitio ni por d
       subtitle:
         "Complete the form to start your consultation with our team. We will respond with a clear and strategic legal path based on your goals.",
       formTitle: "Contact Form",
+    },
+    bookingPage: {
+      eyebrow: "Confirmation",
+      title: "Your consultation was scheduled",
+      subtitle:
+        "Your payment was received successfully. Our team will review your request and contact you to confirm your consultation details.",
+      homeButton: "Back to home",
     },
     footer: {
       privacy: "Privacy",
@@ -634,6 +648,7 @@ export default function App() {
   const isEssencePage = currentPath === "/mision-vision-valores";
   const isServicesPage = currentPath === "/servicios";
   const isContactPage = currentPath === "/contacto";
+  const isBookingPage = currentPath === "/cita-agendada";
 
   // cerrar al hacer clic fuera o con ESC
   useEffect(() => {
@@ -1221,6 +1236,19 @@ export default function App() {
                   ))}
                 </div>
               </article>
+            </div>
+          </div>
+        </section>
+      ) : isBookingPage ? (
+        <section className="bg-[#F4F7FC]">
+          <div className="mx-auto max-w-4xl px-4 py-20 md:py-24">
+            <div className="rounded-3xl border border-slate-200 bg-white shadow-xl shadow-slate-900/5 p-8 md:p-12 text-center">
+              <p className="uppercase tracking-[0.18em] text-xs text-[#2C344C]/70 mb-3">{t.bookingPage.eyebrow}</p>
+              <h1 className="font-[Bodoni Moda] text-3xl md:text-5xl text-[#2C344C] mb-4">{t.bookingPage.title}</h1>
+              <p className="text-slate-700 max-w-2xl mx-auto leading-relaxed mb-8">{t.bookingPage.subtitle}</p>
+              <button onClick={() => navigateTo("/")} className="btn btn-primary">
+                {t.bookingPage.homeButton}
+              </button>
             </div>
           </div>
         </section>
