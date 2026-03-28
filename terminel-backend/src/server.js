@@ -117,6 +117,43 @@ function mapDurationToPrice(duration) {
   return null;
 }
 
+function toMetadataValue(value, max = 500) {
+  if (value === null || value === undefined) return "";
+  return String(value).slice(0, max);
+}
+
+function buildSubmissionFromSession(session) {
+  const md = session?.metadata || {};
+  const methodsRaw = md.methods ? md.methods.split("|").filter(Boolean) : [];
+
+  return {
+    id: md.submissionId || session.id,
+    createdAt: new Date().toISOString(),
+    language: md.language || "es",
+    stripeSessionId: session.id,
+    paymentStatus: session.payment_status || "paid",
+    paidAt: new Date().toISOString(),
+    formData: {
+      nombres: md.firstName || "",
+      apellidos: md.lastName || "",
+      email: md.email || session.customer_email || "",
+      telefono: md.phone || "",
+      direccion: md.address || "",
+      nacionalidad: md.nationality || "",
+      estatus: md.immigrationStatus || "",
+      metodos: methodsRaw,
+      deportado: md.deported || "",
+      detenido: md.detained || "",
+      familiar_usa: md.familyUsa || "",
+      resumen: md.summary || "",
+      duracion: md.duration || "",
+      fecha_consulta: md.desiredDate || "",
+      hora_consulta: md.desiredTime || "",
+      acuerdo: md.agreement === "true",
+    },
+  };
+}
+
 async function sendPaymentConfirmationEmail(submission) {
   if (!RESEND_API_KEY || !FROM_EMAIL || !TO_EMAIL) {
     // eslint-disable-next-line no-console
@@ -201,24 +238,26 @@ app.post("/api/stripe/webhook", express.raw({ type: "application/json" }), async
     if (event.type === "checkout.session.completed") {
       const session = event.data.object;
       const submissionId = session.metadata?.submissionId;
-      if (!submissionId) return res.status(200).json({ received: true });
+      const found = submissionId ? findSubmissionById(submissionId) : null;
 
-      const found = findSubmissionById(submissionId);
-      if (!found) return res.status(200).json({ received: true });
-
-      if (!found.paidAt) {
-        const updated = {
-          ...found,
-          stripeSessionId: session.id,
-          paymentStatus: session.payment_status,
-          paidAt: new Date().toISOString(),
-        };
-        upsertSubmission(updated);
-        await Promise.allSettled([
-          sendPaymentConfirmationEmail(updated),
-          sendCustomerThankYouEmail(updated),
-        ]);
+      if (found && found.paidAt) {
+        return res.status(200).json({ received: true });
       }
+
+      const updated = found
+        ? {
+            ...found,
+            stripeSessionId: session.id,
+            paymentStatus: session.payment_status,
+            paidAt: new Date().toISOString(),
+          }
+        : buildSubmissionFromSession(session);
+
+      upsertSubmission(updated);
+      await Promise.allSettled([
+        sendPaymentConfirmationEmail(updated),
+        sendCustomerThankYouEmail(updated),
+      ]);
     }
 
     return res.status(200).json({ received: true });
@@ -313,6 +352,20 @@ app.post("/api/create-checkout-session", async (req, res) => {
         duration: formData.duracion,
         desiredDate: formData.fecha_consulta || "",
         desiredTime: formData.hora_consulta || "",
+        language: language || "es",
+        firstName: toMetadataValue(formData.nombres),
+        lastName: toMetadataValue(formData.apellidos),
+        email: toMetadataValue(formData.email),
+        phone: toMetadataValue(formData.telefono),
+        address: toMetadataValue(formData.direccion),
+        nationality: toMetadataValue(formData.nacionalidad),
+        immigrationStatus: toMetadataValue(formData.estatus),
+        methods: toMetadataValue(Array.isArray(formData.metodos) ? formData.metodos.join("|") : ""),
+        deported: toMetadataValue(formData.deportado),
+        detained: toMetadataValue(formData.detenido),
+        familyUsa: toMetadataValue(formData.familiar_usa),
+        summary: toMetadataValue(formData.resumen, 450),
+        agreement: String(Boolean(formData.acuerdo)),
       },
     });
 
