@@ -40,6 +40,7 @@ if (!RESEND_API_KEY) {
 const stripe = new Stripe(STRIPE_SECRET_KEY, { apiVersion: "2024-06-20" });
 const resend = new Resend(RESEND_API_KEY);
 const app = express();
+const memorySubmissions = new Map();
 
 const allowedOrigins = Array.from(
   new Set([FRONTEND_URL, "http://localhost:5173", "http://127.0.0.1:5173", ...EXTRA_ALLOWED_ORIGINS])
@@ -60,22 +61,29 @@ function ensureDataFile() {
 }
 
 function readSubmissions() {
-  ensureDataFile();
-  const raw = fs.readFileSync(DATA_FILE, "utf8");
   try {
+    ensureDataFile();
+    const raw = fs.readFileSync(DATA_FILE, "utf8");
     const parsed = JSON.parse(raw);
     return Array.isArray(parsed) ? parsed : [];
   } catch {
-    return [];
+    return Array.from(memorySubmissions.values());
   }
 }
 
 function writeSubmissions(items) {
-  ensureDataFile();
-  fs.writeFileSync(DATA_FILE, JSON.stringify(items, null, 2), "utf8");
+  try {
+    ensureDataFile();
+    fs.writeFileSync(DATA_FILE, JSON.stringify(items, null, 2), "utf8");
+  } catch {
+    for (const item of items) {
+      if (item?.id) memorySubmissions.set(item.id, item);
+    }
+  }
 }
 
 function upsertSubmission(nextItem) {
+  if (nextItem?.id) memorySubmissions.set(nextItem.id, nextItem);
   const items = readSubmissions();
   const idx = items.findIndex((item) => item.id === nextItem.id);
   if (idx >= 0) items[idx] = { ...items[idx], ...nextItem };
@@ -84,6 +92,8 @@ function upsertSubmission(nextItem) {
 }
 
 function findSubmissionById(id) {
+  const fromMemory = memorySubmissions.get(id);
+  if (fromMemory) return fromMemory;
   return readSubmissions().find((item) => item.id === id);
 }
 
