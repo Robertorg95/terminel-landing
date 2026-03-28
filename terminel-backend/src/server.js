@@ -15,6 +15,10 @@ const DATA_FILE = path.join(ROOT, "data", "submissions.json");
 
 const PORT = Number(process.env.PORT || 8787);
 const FRONTEND_URL = process.env.FRONTEND_URL || "http://localhost:5173";
+const EXTRA_ALLOWED_ORIGINS = (process.env.ALLOWED_ORIGINS || "")
+  .split(",")
+  .map((item) => item.trim())
+  .filter(Boolean);
 const STRIPE_SECRET_KEY = process.env.STRIPE_SECRET_KEY || "";
 const STRIPE_WEBHOOK_SECRET = process.env.STRIPE_WEBHOOK_SECRET || "";
 const STRIPE_CURRENCY = (process.env.STRIPE_CURRENCY || "usd").toLowerCase();
@@ -35,7 +39,9 @@ const stripe = new Stripe(STRIPE_SECRET_KEY, { apiVersion: "2024-06-20" });
 const resend = new Resend(RESEND_API_KEY);
 const app = express();
 
-const allowedOrigins = [FRONTEND_URL, "http://localhost:5173", "http://127.0.0.1:5173"];
+const allowedOrigins = Array.from(
+  new Set([FRONTEND_URL, "http://localhost:5173", "http://127.0.0.1:5173", ...EXTRA_ALLOWED_ORIGINS])
+);
 app.use(
   cors({
     origin(origin, callback) {
@@ -296,7 +302,11 @@ app.post("/api/create-checkout-session", async (req, res) => {
   }
 });
 
-app.listen(PORT, () => {
-  // eslint-disable-next-line no-console
-  console.log(`Terminel backend running on http://localhost:${PORT}`);
-});
+if (!process.env.VERCEL) {
+  app.listen(PORT, () => {
+    // eslint-disable-next-line no-console
+    console.log(`Terminel backend running on http://localhost:${PORT}`);
+  });
+}
+
+export default app;
