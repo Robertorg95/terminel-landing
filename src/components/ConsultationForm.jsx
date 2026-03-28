@@ -29,6 +29,7 @@ const FORM_TEXT = {
     scheduleDate: "Fecha deseada para la consulta",
     scheduleTime: "Hora deseada para la consulta",
     scheduleTimePlaceholder: "Seleccione una hora",
+    weekendError: "Solo se permiten citas de lunes a viernes.",
     scheduleNote:
       "La fecha y hora seleccionadas son preferenciales. Terminel Law Consulting se comunicara con usted para confirmar la disponibilidad final y coordinar su consulta.",
     notice:
@@ -69,6 +70,7 @@ const FORM_TEXT = {
     scheduleDate: "Preferred consultation date",
     scheduleTime: "Preferred consultation time",
     scheduleTimePlaceholder: "Select a time",
+    weekendError: "Appointments are only available Monday through Friday.",
     scheduleNote:
       "The selected date and time are preferred options. Terminel Law Consulting will contact you to confirm final availability and coordinate your consultation.",
     notice:
@@ -91,24 +93,23 @@ export default function ConsultationForm({ language = "es" }) {
 
   const [agreed, setAgreed] = useState(false);
   const [selectedDuration, setSelectedDuration] = useState("");
+  const [selectedDate, setSelectedDate] = useState("");
   const [submitError, setSubmitError] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
 
   const timeOptions = [
-    { value: "08:00", es: "08:00 a. m.", en: "08:00 AM" },
-    { value: "09:00", es: "09:00 a. m.", en: "09:00 AM" },
     { value: "10:00", es: "10:00 a. m.", en: "10:00 AM" },
     { value: "11:00", es: "11:00 a. m.", en: "11:00 AM" },
     { value: "12:00", es: "12:00 p. m.", en: "12:00 PM" },
     { value: "13:00", es: "01:00 p. m.", en: "01:00 PM" },
-    { value: "14:00", es: "02:00 p. m.", en: "02:00 PM" },
-    { value: "15:00", es: "03:00 p. m.", en: "03:00 PM" },
-    { value: "16:00", es: "04:00 p. m.", en: "04:00 PM" },
-    { value: "17:00", es: "05:00 p. m.", en: "05:00 PM" },
-    { value: "18:00", es: "06:00 p. m.", en: "06:00 PM" },
-    { value: "19:00", es: "07:00 p. m.", en: "07:00 PM" },
-    { value: "20:00", es: "08:00 p. m.", en: "08:00 PM" },
   ];
+
+  const isWeekendDate = (dateValue) => {
+    if (!dateValue) return false;
+    const date = new Date(`${dateValue}T00:00:00`);
+    const day = date.getDay();
+    return day === 0 || day === 6;
+  };
 
   const handleContinueToStripe = async () => {
     setSubmitError("");
@@ -123,6 +124,11 @@ export default function ConsultationForm({ language = "es" }) {
 
     if (!formEl.checkValidity()) {
       formEl.reportValidity();
+      return;
+    }
+
+    if (isWeekendDate(selectedDate)) {
+      setSubmitError(t.weekendError);
       return;
     }
 
@@ -321,8 +327,16 @@ export default function ConsultationForm({ language = "es" }) {
                 <input
                   type="date"
                   name="fecha_consulta"
+                  value={selectedDate}
                   min={today}
                   required
+                  onChange={(e) => {
+                    const nextDate = e.target.value;
+                    setSelectedDate(nextDate);
+                    const invalidWeekend = isWeekendDate(nextDate);
+                    e.target.setCustomValidity(invalidWeekend ? t.weekendError : "");
+                    setSubmitError(invalidWeekend ? t.weekendError : "");
+                  }}
                   className="mt-1 w-full rounded-xl border border-slate-300 px-4 py-2.5 bg-white focus:outline-none focus:ring-2 focus:ring-[#2C344C]"
                 />
               </div>
