@@ -87,7 +87,7 @@ export default function ConsultationForm({ language = "es" }) {
   const t = FORM_TEXT[language] ?? FORM_TEXT.es;
   const formRef = useRef(null);
   const today = new Date().toISOString().split("T")[0];
-  const backendUrl = import.meta.env.VITE_BACKEND_URL || "http://localhost:8787";
+  const backendUrl = (import.meta.env.VITE_BACKEND_URL || "http://localhost:8787").replace(/\/+$/, "");
 
   const [agreed, setAgreed] = useState(false);
   const [selectedDuration, setSelectedDuration] = useState("");

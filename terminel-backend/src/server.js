@@ -22,6 +22,8 @@ const EXTRA_ALLOWED_ORIGINS = (process.env.ALLOWED_ORIGINS || "")
 const STRIPE_SECRET_KEY = process.env.STRIPE_SECRET_KEY || "";
 const STRIPE_WEBHOOK_SECRET = process.env.STRIPE_WEBHOOK_SECRET || "";
 const STRIPE_CURRENCY = (process.env.STRIPE_CURRENCY || "usd").toLowerCase();
+const STRIPE_DEBUG = process.env.STRIPE_DEBUG === "true";
+const STRIPE_MOCK_MODE = process.env.STRIPE_MOCK_MODE === "true";
 const RESEND_API_KEY = process.env.RESEND_API_KEY || "";
 const FROM_EMAIL = process.env.FROM_EMAIL || "";
 const TO_EMAIL = process.env.TO_EMAIL || "iterminellaw@gmail.com";
@@ -225,10 +227,6 @@ app.get("/api/health", (_req, res) => {
 
 app.post("/api/create-checkout-session", async (req, res) => {
   try {
-    if (!STRIPE_SECRET_KEY) {
-      return res.status(500).json({ error: "Stripe server key is not configured." });
-    }
-
     const { formData, language } = req.body || {};
     if (!formData || !formData.duracion || !formData.email) {
       return res.status(400).json({ error: "Missing required form fields." });
@@ -266,6 +264,22 @@ app.post("/api/create-checkout-session", async (req, res) => {
     };
     upsertSubmission(submission);
 
+    if (STRIPE_MOCK_MODE) {
+      const mockSessionId = `cs_mock_${submissionId}`;
+      const mockSuccessUrl = `${FRONTEND_URL}/contacto?payment=success&session_id=${mockSessionId}&mock=true`;
+      upsertSubmission({
+        ...submission,
+        stripeSessionId: mockSessionId,
+        paymentStatus: "paid_mock",
+        paidAt: new Date().toISOString(),
+      });
+      return res.status(200).json({ url: mockSuccessUrl, mock: true });
+    }
+
+    if (!STRIPE_SECRET_KEY) {
+      return res.status(500).json({ error: "Stripe server key is not configured." });
+    }
+
     const session = await stripe.checkout.sessions.create({
       mode: "payment",
       customer_email: formData.email,
@@ -297,8 +311,17 @@ app.post("/api/create-checkout-session", async (req, res) => {
     return res.status(200).json({ url: session.url });
   } catch (error) {
     // eslint-disable-next-line no-console
-    console.error("Checkout error:", error.message);
-    return res.status(500).json({ error: "Could not create checkout session." });
+    console.error("Checkout error:", error);
+    const payload = { error: "Could not create checkout session." };
+    if (STRIPE_DEBUG) {
+      payload.details = {
+        message: error?.message || null,
+        type: error?.type || null,
+        code: error?.code || null,
+        requestId: error?.requestId || null,
+      };
+    }
+    return res.status(500).json(payload);
   }
 });
 
