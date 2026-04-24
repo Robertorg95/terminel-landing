@@ -118,7 +118,7 @@ const FORM_TEXT = {
     corporateSummaryHint: "1-3 lines max",
     investmentLabel: "Estimated investment",
     investmentHint:
-      "This helps us assign the right strategy type. These are selection options only, not payment amounts.",
+      "This helps us assign the appropriate strategy type. These are selection options that do not create any contractual and/or financial obligation for the applicant.",
     invPlaceholder: "Select an option...",
     inv1: "$1,000 - $5,000",
     inv2: "$5,000 - $15,000",
