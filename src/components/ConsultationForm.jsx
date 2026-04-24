@@ -47,7 +47,7 @@ const FORM_TEXT = {
     corporateSummaryHint: "1-3 lineas maximo",
     investmentLabel: "Inversion estimada",
     investmentHint:
-      "Nos ayuda a asignar el tipo de estrategia adecuada, estas son opciones para elegir, no son para pagar ni nada.",
+      "Nos ayuda a asignar el tipo de estrategia adecuada, estas son opciones a elegir que no generan obligacion contractual y/o economica al solicitante.",
     invPlaceholder: "Seleccione una opcion...",
     inv1: "$1,000 - $5,000",
     inv2: "$5,000 - $15,000",
