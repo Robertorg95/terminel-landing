@@ -112,8 +112,7 @@ function escapeHtml(input = "") {
 }
 
 function mapDurationToPrice(duration) {
-  if (duration === "30min") return { unitAmount: 10000, label: "30 min consultation" };
-  if (duration === "1h") return { unitAmount: 15000, label: "1 hour consultation" };
+  if (duration === "1h") return { unitAmount: 26000, label: "1 hour consultation" };
   return null;
 }
 
@@ -145,6 +144,11 @@ function buildSubmissionFromSession(session) {
       deportado: md.deported || "",
       detenido: md.detained || "",
       familiar_usa: md.familyUsa || "",
+      tipo_consulta: md.consultationType || "migracion",
+      empresa_nombre: md.companyName || "",
+      empresa_operacion: md.companyOperation || "",
+      empresa_necesidad: md.companyNeed || "",
+      inversion_estimada: md.investmentRange || "",
       resumen: md.summary || "",
       duracion: md.duration || "",
       fecha_consulta: md.desiredDate || "",
@@ -162,6 +166,8 @@ async function sendPaymentConfirmationEmail(submission) {
   }
 
   const form = submission.formData || {};
+  const isCorporate = form.tipo_consulta === "corporativa";
+  const consultationTypeLabel = isCorporate ? "Corporativa" : "Visas y Migracion";
   const html = `
     <h2>Nuevo pago confirmado - Terminel Law Consulting</h2>
     <p><strong>Submission ID:</strong> ${escapeHtml(submission.id)}</p>
@@ -169,22 +175,34 @@ async function sendPaymentConfirmationEmail(submission) {
     <hr />
     <h3>Datos del formulario</h3>
     <ul>
+      <li><strong>Tipo de consulta:</strong> ${escapeHtml(consultationTypeLabel)}</li>
       <li><strong>Nombre(s):</strong> ${escapeHtml(form.nombres)}</li>
       <li><strong>Apellido(s):</strong> ${escapeHtml(form.apellidos)}</li>
       <li><strong>Email:</strong> ${escapeHtml(form.email)}</li>
       <li><strong>Telefono:</strong> ${escapeHtml(form.telefono)}</li>
+      <li><strong>Duracion:</strong> ${escapeHtml(form.duracion || "")}</li>
+      <li><strong>Fecha deseada:</strong> ${escapeHtml(form.fecha_consulta || "")}</li>
+      <li><strong>Hora deseada:</strong> ${escapeHtml(form.hora_consulta || "")}</li>
+      ${
+        isCorporate
+          ? `
+      <li><strong>Empresa:</strong> ${escapeHtml(form.empresa_nombre || "")}</li>
+      <li><strong>Operacion principal:</strong> ${escapeHtml(form.empresa_operacion || "")}</li>
+      <li><strong>Necesidad principal:</strong> ${escapeHtml(form.empresa_necesidad || "")}</li>
+      <li><strong>Inversion estimada:</strong> ${escapeHtml(form.inversion_estimada || "")}</li>
+      `
+          : `
       <li><strong>Direccion:</strong> ${escapeHtml(form.direccion || "")}</li>
       <li><strong>Nacionalidad(es):</strong> ${escapeHtml(form.nacionalidad || "")}</li>
       <li><strong>Estatus migratorio:</strong> ${escapeHtml(form.estatus || "")}</li>
       <li><strong>Metodo(s) preferido(s):</strong> ${escapeHtml(formatMethods(form.metodos))}</li>
-      <li><strong>Duracion:</strong> ${escapeHtml(form.duracion || "")}</li>
-      <li><strong>Fecha deseada:</strong> ${escapeHtml(form.fecha_consulta || "")}</li>
-      <li><strong>Hora deseada:</strong> ${escapeHtml(form.hora_consulta || "")}</li>
       <li><strong>Deportado / ingreso negado:</strong> ${escapeHtml(form.deportado || "")}</li>
       <li><strong>Detenido previamente:</strong> ${escapeHtml(form.detenido || "")}</li>
       <li><strong>Familiar ciudadano/residente USA:</strong> ${escapeHtml(form.familiar_usa || "")}</li>
+      `
+      }
       <li><strong>Resumen:</strong> ${escapeHtml(form.resumen || "")}</li>
-      <li><strong>Acepto privacidad:</strong> ${form.acuerdo ? "Si" : "No"}</li>
+      <li><strong>Acepta terminos y privacidad:</strong> ${form.acuerdo ? "Si" : "No"}</li>
     </ul>
   `;
 
@@ -304,6 +322,11 @@ app.post("/api/create-checkout-session", async (req, res) => {
         deportado: formData.deportado || "",
         detenido: formData.detenido || "",
         familiar_usa: formData.familiar_usa || "",
+        tipo_consulta: formData.tipo_consulta || "migracion",
+        empresa_nombre: formData.empresa_nombre || "",
+        empresa_operacion: formData.empresa_operacion || "",
+        empresa_necesidad: formData.empresa_necesidad || "",
+        inversion_estimada: formData.inversion_estimada || "",
         resumen: formData.resumen || "",
         duracion: formData.duracion || "",
         fecha_consulta: formData.fecha_consulta || "",
@@ -340,7 +363,7 @@ app.post("/api/create-checkout-session", async (req, res) => {
           price_data: {
             currency: STRIPE_CURRENCY,
             product_data: {
-              name: "Terminel Law Consulting - Consultation",
+              name: `Terminel Law Consulting - ${formData.tipo_consulta === "corporativa" ? "Corporate Consultation" : "Immigration Consultation"}`,
               description: pricing.label,
             },
             unit_amount: pricing.unitAmount,
@@ -364,6 +387,11 @@ app.post("/api/create-checkout-session", async (req, res) => {
         deported: toMetadataValue(formData.deportado),
         detained: toMetadataValue(formData.detenido),
         familyUsa: toMetadataValue(formData.familiar_usa),
+        consultationType: toMetadataValue(formData.tipo_consulta || "migracion"),
+        companyName: toMetadataValue(formData.empresa_nombre),
+        companyOperation: toMetadataValue(formData.empresa_operacion),
+        companyNeed: toMetadataValue(formData.empresa_necesidad),
+        investmentRange: toMetadataValue(formData.inversion_estimada),
         summary: toMetadataValue(formData.resumen, 450),
         agreement: String(Boolean(formData.acuerdo)),
       },
